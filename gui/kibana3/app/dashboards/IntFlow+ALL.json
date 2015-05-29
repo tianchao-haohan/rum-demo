@@ -1,0 +1,761 @@
+{
+  "title": "IntFlow",
+  "services": {
+    "query": {
+      "list": {
+        "0": {
+          "query": "*",
+          "alias": "ALL",
+          "color": "#7EB26D",
+          "id": 0,
+          "pin": true,
+          "type": "lucene",
+          "enable": true
+        },
+        "1": {
+          "id": 1,
+          "color": "#EAB839",
+          "alias": "Web业务",
+          "pin": true,
+          "type": "lucene",
+          "enable": true,
+          "query": "type:http_network"
+        },
+        "2": {
+          "id": 2,
+          "color": "#6ED0E0",
+          "alias": "Mysql业务",
+          "pin": true,
+          "type": "lucene",
+          "enable": true,
+          "query": "type:mysql_network"
+        },
+        "3": {
+          "id": 3,
+          "color": "#EF843C",
+          "alias": "Mysql访问量",
+          "pin": true,
+          "type": "lucene",
+          "enable": true,
+          "query": "type:mysql_network AND (tcp_state:TCP_RESET_TYPE1 or tcp_state:TCP_RESET_TYPE2 or mysql_state:MYSQL_OK or mysql_state:MYSQL_ERROR or mysql_state:MYSQL_RESET_TYPE1 or mysql_state:MYSQL_RESET_TYPE2 or mysql_state:MYSQL_RESET_TYPE3 or mysql_state:MYSQL_RESET_TYPE4 )"
+        },
+        "4": {
+          "id": 4,
+          "color": "#E24D42",
+          "alias": "Web访问量",
+          "pin": true,
+          "type": "lucene",
+          "enable": true,
+          "query": "type:http_network AND (tcp_state:TCP_RESET_TYPE1 or tcp_state:TCP_RESET_TYPE2 or http_state:HTTP_OK or http_state:HTTP_ERROR or http_state:HTTP_RESET_TYPE1 or http_state:HTTP_RESET_TYPE2 or http_state:HTTP_RESET_TYPE3 or http_state:HTTP_RESET_TYPE4 )"
+        },
+        "5": {
+          "id": 5,
+          "color": "#1F78C1",
+          "alias": "Web事件数",
+          "pin": true,
+          "type": "lucene",
+          "enable": true,
+          "query": "type:http_network AND (tcp_state:TCP_RESET_TYPE1 or tcp_state:TCP_RESET_TYPE2 or http_state:HTTP_ERROR or http_state:HTTP_RESET_TYPE1 or http_state:HTTP_RESET_TYPE2 or http_state:HTTP_RESET_TYPE3 or http_state:HTTP_RESET_TYPE4 )"
+        },
+        "6": {
+          "id": 6,
+          "color": "#BA43A9",
+          "alias": "Mysql事件数",
+          "pin": true,
+          "type": "lucene",
+          "enable": true,
+          "query": "type:mysql_network AND (tcp_state:TCP_RESET_TYPE1 or tcp_state:TCP_RESET_TYPE2 or mysql_state:MYSQL_ERROR or mysql_state:MYSQL_RESET_TYPE1 or mysql_state:MYSQL_RESET_TYPE2 or mysql_state:MYSQL_RESET_TYPE3 or mysql_state:MYSQL_RESET_TYPE4 )"
+        },
+        "7": {
+          "id": 7,
+          "color": "#705DA0",
+          "alias": "Web成功访问",
+          "pin": true,
+          "type": "lucene",
+          "enable": true,
+          "query": "type:http_network AND http_state:HTTP_OK"
+        },
+        "8": {
+          "id": 8,
+          "color": "#508642",
+          "alias": "Mysql成功访问",
+          "pin": true,
+          "type": "lucene",
+          "enable": true,
+          "query": "type:mysql_network AND mysql_state:MYSQL_OK"
+        }
+      },
+      "ids": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ]
+    },
+    "filter": {
+      "list": {
+        "0": {
+          "type": "time",
+          "field": "@timestamp",
+          "from": "now-1h",
+          "to": "now",
+          "mandate": "must",
+          "active": true,
+          "alias": "",
+          "id": 0
+        }
+      },
+      "ids": [
+        0
+      ]
+    }
+  },
+  "rows": [
+    {
+      "title": "Graph",
+      "height": "350px",
+      "editable": true,
+      "collapse": false,
+      "collapsable": true,
+      "panels": [
+        {
+          "error": false,
+          "span": 12,
+          "editable": true,
+          "type": "force",
+          "loadingEditor": false,
+          "spyable": true,
+          "size": "100",
+          "queries": {
+            "mode": "all",
+            "ids": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8
+            ]
+          },
+          "title": "拓扑结构",
+          "src_field": "source_ip",
+          "dst_field": "service_ip"
+        }
+      ],
+      "notice": false
+    },
+    {
+      "title": "统计",
+      "height": "250px",
+      "editable": true,
+      "collapse": false,
+      "collapsable": true,
+      "panels": [
+        {
+          "span": 6,
+          "editable": true,
+          "type": "multifieldhistogram",
+          "loadingEditor": false,
+          "values": [
+            {
+              "mode": "mean",
+              "value_field": "responsetime",
+              "scale": 1,
+              "zerofill": true,
+              "yaxisposition": "left",
+              "derivative": false,
+              "queries": [
+                1
+              ],
+              "color": null,
+              "alias": null
+            },
+            {
+              "mode": "mean",
+              "value_field": "responsetime",
+              "scale": 1,
+              "zerofill": true,
+              "yaxisposition": "left",
+              "derivative": false,
+              "queries": [
+                2
+              ],
+              "color": null,
+              "alias": null
+            }
+          ],
+          "time_field": "@timestamp",
+          "x-axis": true,
+          "y-axis": true,
+          "y_format": "none",
+          "grid": {
+            "max": null,
+            "min": 0
+          },
+          "annotate": {
+            "enable": false,
+            "query": "*",
+            "size": 20,
+            "field": "_type",
+            "sort": [
+              "_score",
+              "desc"
+            ]
+          },
+          "auto_int": true,
+          "resolution": 100,
+          "interval": "30s",
+          "intervals": [
+            "auto",
+            "1s",
+            "1m",
+            "5m",
+            "10m",
+            "30m",
+            "1h",
+            "3h",
+            "12h",
+            "1d",
+            "1w",
+            "1y"
+          ],
+          "lines": true,
+          "fill": 0,
+          "linewidth": 3,
+          "points": false,
+          "pointradius": 5,
+          "stack": false,
+          "spyable": true,
+          "zoomlinks": true,
+          "options": true,
+          "legend": true,
+          "show_query": true,
+          "interactive": true,
+          "legend_counts": true,
+          "timezone": "browser",
+          "percentage": false,
+          "tooltip": {
+            "value_type": "cumulative",
+            "query_as_alias": true
+          },
+          "title": "响应时间"
+        },
+        {
+          "span": 6,
+          "editable": true,
+          "type": "histogram",
+          "loadingEditor": false,
+          "mode": "count",
+          "time_field": "@timestamp",
+          "value_field": null,
+          "x-axis": true,
+          "y-axis": true,
+          "scale": 1,
+          "y_format": "none",
+          "grid": {
+            "max": null,
+            "min": 0
+          },
+          "queries": {
+            "mode": "selected",
+            "check": [],
+            "threshold": {},
+            "ids": [
+              5,
+              6
+            ]
+          },
+          "annotate": {
+            "enable": false,
+            "query": "*",
+            "size": 20,
+            "field": "_type",
+            "sort": [
+              "_score",
+              "desc"
+            ]
+          },
+          "auto_int": true,
+          "resolution": 100,
+          "interval": "30s",
+          "intervals": [
+            "auto",
+            "1s",
+            "1m",
+            "5m",
+            "10m",
+            "30m",
+            "1h",
+            "3h",
+            "12h",
+            "1d",
+            "1w",
+            "1y"
+          ],
+          "lines": true,
+          "fill": 0,
+          "linewidth": 3,
+          "points": false,
+          "pointradius": 5,
+          "bars": false,
+          "stack": false,
+          "threshold": false,
+          "spyable": true,
+          "zoomlinks": true,
+          "options": true,
+          "legend": true,
+          "show_query": true,
+          "interactive": true,
+          "legend_counts": true,
+          "timezone": "browser",
+          "percentage": false,
+          "zerofill": true,
+          "derivative": false,
+          "tooltip": {
+            "value_type": "individual",
+            "query_as_alias": true
+          },
+          "title": "事件统计"
+        },
+        {
+          "span": 6,
+          "editable": true,
+          "type": "histogram",
+          "loadingEditor": false,
+          "mode": "count",
+          "time_field": "@timestamp",
+          "value_field": null,
+          "x-axis": true,
+          "y-axis": true,
+          "scale": 1,
+          "y_format": "none",
+          "grid": {
+            "max": null,
+            "min": 0
+          },
+          "queries": {
+            "mode": "selected",
+            "check": [],
+            "threshold": {},
+            "ids": [
+              3,
+              4
+            ]
+          },
+          "annotate": {
+            "enable": false,
+            "query": "*",
+            "size": 20,
+            "field": "_type",
+            "sort": [
+              "_score",
+              "desc"
+            ]
+          },
+          "auto_int": true,
+          "resolution": 100,
+          "interval": "30s",
+          "intervals": [
+            "auto",
+            "1s",
+            "1m",
+            "5m",
+            "10m",
+            "30m",
+            "1h",
+            "3h",
+            "12h",
+            "1d",
+            "1w",
+            "1y"
+          ],
+          "lines": true,
+          "fill": 0,
+          "linewidth": 3,
+          "points": false,
+          "pointradius": 5,
+          "bars": false,
+          "stack": false,
+          "threshold": false,
+          "spyable": true,
+          "zoomlinks": true,
+          "options": true,
+          "legend": true,
+          "show_query": true,
+          "interactive": true,
+          "legend_counts": true,
+          "timezone": "browser",
+          "percentage": false,
+          "zerofill": true,
+          "derivative": false,
+          "tooltip": {
+            "value_type": "individual",
+            "query_as_alias": true
+          },
+          "title": "访问量"
+        },
+        {
+          "span": 6,
+          "editable": true,
+          "type": "multifieldhistogram",
+          "loadingEditor": false,
+          "values": [
+            {
+              "mode": "total",
+              "value_field": "tcp_total_packets",
+              "scale": 1,
+              "zerofill": true,
+              "yaxisposition": "left",
+              "derivative": false,
+              "queries": [
+                1
+              ],
+              "color": null,
+              "alias": null
+            },
+            {
+              "mode": "total",
+              "value_field": "tcp_total_packets",
+              "scale": 1,
+              "zerofill": true,
+              "yaxisposition": "left",
+              "derivative": false,
+              "queries": [
+                2
+              ],
+              "color": null,
+              "alias": null
+            }
+          ],
+          "time_field": "@timestamp",
+          "x-axis": true,
+          "y-axis": true,
+          "y_format": "none",
+          "grid": {
+            "max": null,
+            "min": 0
+          },
+          "annotate": {
+            "enable": false,
+            "query": "*",
+            "size": 20,
+            "field": "_type",
+            "sort": [
+              "_score",
+              "desc"
+            ]
+          },
+          "auto_int": true,
+          "resolution": 100,
+          "interval": "30s",
+          "intervals": [
+            "auto",
+            "1s",
+            "1m",
+            "5m",
+            "10m",
+            "30m",
+            "1h",
+            "3h",
+            "12h",
+            "1d",
+            "1w",
+            "1y"
+          ],
+          "lines": true,
+          "fill": 0,
+          "linewidth": 3,
+          "points": false,
+          "pointradius": 5,
+          "stack": true,
+          "spyable": true,
+          "zoomlinks": true,
+          "options": true,
+          "legend": true,
+          "show_query": true,
+          "interactive": true,
+          "legend_counts": true,
+          "timezone": "browser",
+          "percentage": false,
+          "tooltip": {
+            "value_type": "cumulative",
+            "query_as_alias": true
+          },
+          "title": "流量分析"
+        }
+      ],
+      "notice": false
+    },
+    {
+      "title": "日志",
+      "height": "150px",
+      "editable": true,
+      "collapse": false,
+      "collapsable": true,
+      "panels": [
+        {
+          "error": false,
+          "span": 6,
+          "editable": true,
+          "type": "terms",
+          "loadingEditor": false,
+          "field": "http_request_line",
+          "exclude": [],
+          "missing": true,
+          "other": true,
+          "size": 10,
+          "order": "count",
+          "style": {
+            "font-size": "10pt"
+          },
+          "donut": false,
+          "tilt": false,
+          "labels": true,
+          "arrangement": "horizontal",
+          "chart": "table",
+          "counter_pos": "above",
+          "spyable": true,
+          "queries": {
+            "mode": "selected",
+            "ids": [
+              1
+            ]
+          },
+          "multiterms": [],
+          "fmode": "normal",
+          "tmode": "terms",
+          "tstat": "total",
+          "valuefield": "",
+          "title": "TOP 10 URL"
+        },
+        {
+          "error": false,
+          "span": 6,
+          "editable": true,
+          "type": "terms",
+          "loadingEditor": false,
+          "field": "mysql_query",
+          "exclude": [],
+          "missing": true,
+          "other": true,
+          "size": 10,
+          "order": "count",
+          "style": {
+            "font-size": "10pt"
+          },
+          "donut": false,
+          "tilt": false,
+          "labels": true,
+          "arrangement": "horizontal",
+          "chart": "table",
+          "counter_pos": "above",
+          "spyable": true,
+          "queries": {
+            "mode": "selected",
+            "ids": [
+              2
+            ]
+          },
+          "multiterms": [],
+          "fmode": "normal",
+          "tmode": "terms",
+          "tstat": "total",
+          "valuefield": "",
+          "title": "TOP 10 SQL"
+        },
+        {
+          "error": false,
+          "span": 6,
+          "editable": true,
+          "type": "column",
+          "loadingEditor": false,
+          "panels": [
+            {
+              "loading": false,
+              "sizeable": false,
+              "draggable": false,
+              "removable": false,
+              "span": 10,
+              "height": "150px",
+              "editable": true,
+              "type": "hits",
+              "chart": "pie",
+              "counter_pos": "above",
+              "arrangement": "horizontal",
+              "style": {
+                "font-size": "10pt"
+              },
+              "donut": false,
+              "tilt": false,
+              "labels": true,
+              "spyable": true,
+              "queries": {
+                "mode": "selected",
+                "ids": [
+                  1,
+                  2
+                ]
+              },
+              "title": "分类"
+            },
+            {
+              "loading": false,
+              "error": false,
+              "sizeable": false,
+              "draggable": false,
+              "removable": false,
+              "span": 10,
+              "height": "150px",
+              "editable": true,
+              "type": "terms",
+              "tmode": "terms",
+              "fmode": "normal",
+              "field": "type",
+              "size": 10,
+              "order": "count",
+              "chart": "table",
+              "exclude": [],
+              "missing": true,
+              "other": true,
+              "style": {
+                "font-size": "10pt"
+              },
+              "donut": false,
+              "tilt": false,
+              "labels": true,
+              "arrangement": "horizontal",
+              "counter_pos": "above",
+              "spyable": true,
+              "queries": {
+                "mode": "all",
+                "ids": [
+                  0,
+                  1,
+                  2,
+                  3,
+                  4,
+                  5,
+                  6,
+                  7,
+                  8
+                ]
+              },
+              "multiterms": [],
+              "tstat": "total",
+              "valuefield": "",
+              "title": "列表"
+            }
+          ],
+          "title": "日志统计"
+        }
+      ],
+      "notice": false
+    }
+  ],
+  "editable": true,
+  "index": {
+    "interval": "day",
+    "pattern": "[intflow-]YYYY.MM.DD",
+    "default": "_all",
+    "warm_fields": false
+  },
+  "style": "light",
+  "failover": false,
+  "panel_hints": true,
+  "loader": {
+    "save_gist": false,
+    "save_elasticsearch": true,
+    "save_local": true,
+    "save_default": true,
+    "save_temp": true,
+    "save_temp_ttl_enable": true,
+    "save_temp_ttl": "30d",
+    "load_gist": true,
+    "load_elasticsearch": true,
+    "load_elasticsearch_size": 20,
+    "load_local": true,
+    "hide": false
+  },
+  "pulldowns": [
+    {
+      "type": "query",
+      "collapse": false,
+      "notice": false,
+      "query": "*",
+      "pinned": true,
+      "history": [],
+      "remember": 10,
+      "enable": true,
+      "values": [
+        {
+          "sem": "_type",
+          "comp_list": [
+            "ne",
+            "eq"
+          ],
+          "select_comp": "eq",
+          "input": ""
+        }
+      ],
+      "generate": false
+    },
+    {
+      "type": "filtering",
+      "collapse": true,
+      "notice": true,
+      "enable": true
+    }
+  ],
+  "nav": [
+    {
+      "notice": false,
+      "enable": true,
+      "collapse": false,
+      "dashboards": ["InfFlow 总览", "MySQL 性能分析", "Web 性能分析"],
+      "label": "Page: ",
+      "type": "dashboard_dropdown"
+    },
+    {
+      "type": "timepicker",
+      "collapse": false,
+      "notice": false,
+      "status": "Stable",
+      "time_options": [
+        "5m",
+        "15m",
+        "1h",
+        "6h",
+        "12h",
+        "24h",
+        "2d",
+        "7d",
+        "30d"
+      ],
+      "refresh_intervals": [
+        "5s",
+        "10s",
+        "30s",
+        "1m",
+        "5m",
+        "15m",
+        "30m",
+        "1h",
+        "2h",
+        "1d"
+      ],
+      "timefield": "@timestamp",
+      "enable": true,
+      "now": true,
+      "filter_id": 0
+    }
+  ],
+  "refresh": false
+}

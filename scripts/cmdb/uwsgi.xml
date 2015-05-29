@@ -1,0 +1,8 @@
+<uwsgi>
+<socket>0.0.0.0:31234</socket>
+<listen>20</listen>
+<master>true</master>
+<pythonpath>/home/intflow/workspace/python/cmdb</pythonpath>
+<profile>true</profile>
+<enable-threads>true</enable-threads>
+</uwsgi>

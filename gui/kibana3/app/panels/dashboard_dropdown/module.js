@@ -1,0 +1,4 @@
+/*! kibana - v3.1.2 - 2015-01-15
+ * Copyright (c) 2015 Rashid Khan; Licensed Apache License */
+
+define("panels/dashboard_dropdown/module",["angular","app","lodash"],function(a,b,c){var d=a.module("kibana.panels.dashboard_dropdown",[]);b.useModule(d),d.controller("dashboard_dropdown",["$scope","$modal","$q","$window","dashboard",function(a,b,d,e,f){a.panelMeta={status:"Experimental",description:"A panel that simplifies switching between dashboards"};var g={label:"Select Dashboard:"};c.defaults(a.panel,g),a.init=function(){f.elasticsearch_list(null,50).then(function(b){c.isUndefined(b.hits)||(a.panel.dashboards=[f.current.title],c.forEach(b.hits.hits,function(b){b._id!==f.current.title&&a.panel.dashboards.push(b._id)}),a.selectedDashboard=f.current.title)})},a.selectAction=function(){a.selectedDashboard!==f.current.title&&(e.location.href="#/dashboard/elasticsearch/"+a.selectedDashboard)}}])});

@@ -1,0 +1,43 @@
+{
+  "template" : "intflow-*",
+  "settings" : {
+    "index.refresh_interval" : "1s"
+  },
+  "mappings" : {
+    "_default_" : {
+      "_all" : {"enabled" : false},
+      "date_detection": false,
+      "properties": {
+        "request_raw" : {
+          "type": "string",
+          "index" : "analyzed"
+        },
+        "response_raw" : {
+          "type": "string",
+          "index" : "analyzed"
+        },
+        "http_x_forwarded_for" : {
+          "type": "string",
+          "index" : "analyzed"
+        },
+        "mysql_tables" : {
+          "type": "string",
+          "index" : "analyzed"
+        },
+        "@timestamp": {
+          "type": "date"
+        }
+      },
+      "dynamic_templates": [{
+        "template1": {
+          "match": "*",
+          "mapping": {
+            "type": "{dynamic_type}",
+            "index": "not_analyzed",
+            "doc_values": true
+          }
+        }
+      }]
+    }
+  }
+}

@@ -1,0 +1,793 @@
+{
+  "index": {
+    "default": "_all",
+    "pattern": "[intflow-]YYYY.MM.DD",
+    "warm_fields": false,
+    "interval": "day"
+  },
+  "style": "light",
+  "rows": [
+    {
+      "notice": false,
+      "panels": [
+        {
+          "span": 3,
+          "title": "Web监控",
+          "editable": true,
+          "error": false,
+          "loadingEditor": false,
+          "panels": [
+            {
+              "value_name": "Value",
+              "style": {
+                "font-size": "24pt"
+              },
+              "format": "number",
+              "title": "响应时间",
+              "display_breakdown": "yes",
+              "show": {
+                "count": false,
+                "min": true,
+                "sum_of_squares": false,
+                "max": true,
+                "std_deviation": false,
+                "variance": false,
+                "total": false,
+                "mean": true
+              },
+              "height": "70px",
+              "field": "http_response_latency",
+              "label_name": "统计方法",
+              "mode": "mean",
+              "queries": {
+                "mode": "selected",
+                "ids": [
+                  1
+                ]
+              },
+              "sort_reverse": false,
+              "spyable": true,
+              "sort_field": "",
+              "type": "stats",
+              "unit": "毫秒"
+            },
+            {
+              "style": {
+                "font-size": "10pt"
+              },
+              "loading": false,
+              "span": 10,
+              "queries": {
+                "mode": "selected",
+                "ids": [
+                  5,
+                  7
+                ]
+              },
+              "counter_pos": "above",
+              "labels": true,
+              "editable": true,
+              "chart": "pie",
+              "height": "120px",
+              "draggable": false,
+              "donut": true,
+              "sizeable": false,
+              "title": "可用性",
+              "removable": false,
+              "tilt": false,
+              "spyable": true,
+              "arrangement": "vertical",
+              "type": "hits"
+            },
+            {
+              "style": {
+                "font-size": "10pt"
+              },
+              "loading": false,
+              "span": 10,
+              "queries": {
+                "mode": "selected",
+                "ids": [
+                  16,
+                  20
+                ]
+              },
+              "counter_pos": "above",
+              "labels": true,
+              "editable": true,
+              "chart": "pie",
+              "height": "120px",
+              "draggable": false,
+              "donut": true,
+              "sizeable": false,
+              "title": "节点状况",
+              "removable": false,
+              "tilt": false,
+              "spyable": true,
+              "arrangement": "vertical",
+              "type": "hits"
+            }
+          ],
+          "type": "column"
+        },
+        {
+          "span": 3,
+          "title": "数据库监控",
+          "editable": true,
+          "error": false,
+          "loadingEditor": false,
+          "panels": [
+            {
+              "value_name": "Value",
+              "style": {
+                "font-size": "24pt"
+              },
+              "format": "number",
+              "title": "响应时间",
+              "display_breakdown": "yes",
+              "show": {
+                "count": false,
+                "min": true,
+                "sum_of_squares": false,
+                "max": true,
+                "std_deviation": false,
+                "variance": false,
+                "total": false,
+                "mean": true
+              },
+              "height": "70",
+              "field": "mysql_response_latency",
+              "label_name": "统计方法",
+              "mode": "mean",
+              "queries": {
+                "mode": "selected",
+                "ids": [
+                  2
+                ]
+              },
+              "sort_reverse": false,
+              "spyable": true,
+              "sort_field": "",
+              "type": "stats",
+              "unit": "毫秒"
+            },
+            {
+              "style": {
+                "font-size": "10pt"
+              },
+              "loading": false,
+              "span": 10,
+              "queries": {
+                "mode": "selected",
+                "ids": [
+                  6,
+                  8
+                ]
+              },
+              "counter_pos": "above",
+              "labels": true,
+              "editable": true,
+              "chart": "pie",
+              "height": "120px",
+              "draggable": false,
+              "donut": true,
+              "sizeable": false,
+              "title": "可用性",
+              "removable": false,
+              "tilt": false,
+              "spyable": true,
+              "arrangement": "vertical",
+              "type": "hits"
+            },
+            {
+              "style": {
+                "font-size": "10pt"
+              },
+              "loading": false,
+              "span": 10,
+              "queries": {
+                "mode": "selected",
+                "ids": [
+                  17,
+                  21
+                ]
+              },
+              "counter_pos": "above",
+              "labels": true,
+              "editable": true,
+              "chart": "pie",
+              "height": "120px",
+              "draggable": false,
+              "donut": true,
+              "sizeable": false,
+              "title": "节点状况",
+              "removable": false,
+              "tilt": false,
+              "spyable": true,
+              "arrangement": "vertical",
+              "type": "hits"
+            }
+          ],
+          "type": "column"
+        },
+        {
+          "span": 3,
+          "title": "邮件系统监控",
+          "editable": true,
+          "error": false,
+          "loadingEditor": false,
+          "panels": [
+            {
+              "value_name": "Value",
+              "style": {
+                "font-size": "24pt"
+              },
+              "format": "number",
+              "title": "响应时间",
+              "display_breakdown": "yes",
+              "show": {
+                "count": false,
+                "min": true,
+                "sum_of_squares": false,
+                "max": true,
+                "std_deviation": false,
+                "variance": false,
+                "total": false,
+                "mean": true
+              },
+              "height": "70px",
+              "field": "http_response_latency",
+              "label_name": "统计方法",
+              "mode": "mean",
+              "queries": {
+                "mode": "selected",
+                "ids": [
+                  9
+                ]
+              },
+              "sort_reverse": false,
+              "spyable": true,
+              "sort_field": "",
+              "type": "stats",
+              "unit": "毫秒"
+            },
+            {
+              "style": {
+                "font-size": "10pt"
+              },
+              "loading": false,
+              "span": 10,
+              "queries": {
+                "mode": "selected",
+                "ids": [
+                  11,
+                  12
+                ]
+              },
+              "counter_pos": "above",
+              "labels": true,
+              "editable": true,
+              "chart": "pie",
+              "height": "120px",
+              "draggable": false,
+              "donut": true,
+              "sizeable": false,
+              "title": "可用性",
+              "removable": false,
+              "tilt": false,
+              "spyable": true,
+              "arrangement": "vertical",
+              "type": "hits"
+            },
+            {
+              "style": {
+                "font-size": "10pt"
+              },
+              "loading": false,
+              "span": 10,
+              "queries": {
+                "mode": "selected",
+                "ids": [
+                  18,
+                  23
+                ]
+              },
+              "counter_pos": "above",
+              "labels": true,
+              "editable": true,
+              "chart": "pie",
+              "height": "120px",
+              "draggable": false,
+              "donut": true,
+              "sizeable": false,
+              "title": "节点状况",
+              "removable": false,
+              "tilt": false,
+              "spyable": true,
+              "arrangement": "vertical",
+              "type": "hits"
+            }
+          ],
+          "type": "column"
+        },
+        {
+          "span": 3,
+          "title": "FTP监控",
+          "editable": true,
+          "error": false,
+          "loadingEditor": false,
+          "panels": [
+            {
+              "value_name": "Value",
+              "style": {
+                "font-size": "24pt"
+              },
+              "format": "number",
+              "title": "响应时间",
+              "display_breakdown": "yes",
+              "show": {
+                "count": false,
+                "min": true,
+                "sum_of_squares": false,
+                "max": true,
+                "std_deviation": false,
+                "variance": false,
+                "total": false,
+                "mean": true
+              },
+              "height": "70",
+              "field": "mysql_response_latency",
+              "label_name": "统计方法",
+              "mode": "mean",
+              "queries": {
+                "mode": "selected",
+                "ids": [
+                  13
+                ]
+              },
+              "sort_reverse": false,
+              "spyable": true,
+              "sort_field": "",
+              "type": "stats",
+              "unit": "毫秒"
+            },
+            {
+              "style": {
+                "font-size": "10pt"
+              },
+              "loading": false,
+              "span": 10,
+              "queries": {
+                "mode": "selected",
+                "ids": [
+                  14,
+                  15
+                ]
+              },
+              "counter_pos": "above",
+              "labels": true,
+              "editable": true,
+              "chart": "pie",
+              "height": "120px",
+              "draggable": false,
+              "donut": true,
+              "sizeable": false,
+              "title": "可用性",
+              "removable": false,
+              "tilt": false,
+              "spyable": true,
+              "arrangement": "vertical",
+              "type": "hits"
+            },
+            {
+              "style": {
+                "font-size": "10pt"
+              },
+              "loading": false,
+              "span": 10,
+              "queries": {
+                "mode": "selected",
+                "ids": [
+                  19,
+                  22
+                ]
+              },
+              "counter_pos": "above",
+              "labels": true,
+              "editable": true,
+              "chart": "pie",
+              "height": "120px",
+              "draggable": false,
+              "donut": true,
+              "sizeable": false,
+              "title": "节点状况",
+              "removable": false,
+              "tilt": false,
+              "spyable": true,
+              "arrangement": "vertical",
+              "type": "hits"
+            }
+          ],
+          "type": "column"
+        }
+      ],
+      "collapse": false,
+      "title": "Graph",
+      "editable": true,
+      "height": "350px",
+      "collapsable": true
+    }
+  ],
+  "title": "IntFlow",
+  "failover": false,
+  "editable": true,
+  "refresh": "10s",
+  "loader": {
+    "load_gist": true,
+    "hide": false,
+    "save_temp": true,
+    "load_elasticsearch_size": 20,
+    "load_local": true,
+    "save_temp_ttl": "30d",
+    "load_elasticsearch": true,
+    "save_local": true,
+    "save_elasticsearch": true,
+    "save_temp_ttl_enable": true,
+    "save_gist": false,
+    "save_default": true
+  },
+  "pulldowns": [
+    {
+      "notice": false,
+      "enable": false,
+      "collapse": false,
+      "remember": 10,
+      "pinned": true,
+      "values": [
+        {
+          "comp_list": [
+            "ne",
+            "eq"
+          ],
+          "sem": "_type",
+          "select_comp": "eq",
+          "input": ""
+        }
+      ],
+      "query": "*",
+      "type": "query",
+      "generate": false,
+      "history": [
+        "type:mysql_network",
+        "type:http_network AND http_state:HTTP_OK",
+        "type:http_network AND (tcp_state:TCP_RESET_TYPE1 or tcp_state:TCP_RESET_TYPE2 or http_state:HTTP_ERROR or http_state:HTTP_RESET_TYPE1 or http_state:HTTP_RESET_TYPE2 or http_state:HTTP_RESET_TYPE3 or http_state:HTTP_RESET_TYPE4 )",
+        "type:http_network AND (tcp_state:TCP_RESET_TYPE1 or tcp_state:TCP_RESET_TYPE2 or http_state:HTTP_OK or http_state:HTTP_ERROR or http_state:HTTP_RESET_TYPE1 or http_state:HTTP_RESET_TYPE2 or http_state:HTTP_RESET_TYPE3 or http_state:HTTP_RESET_TYPE4 )",
+        "type:http_network",
+        "type:mysql_network AND mysql_state:MYSQL_OK",
+        "type:mysql_network AND (tcp_state:TCP_RESET_TYPE1 or tcp_state:TCP_RESET_TYPE2 or mysql_state:MYSQL_ERROR or mysql_state:MYSQL_RESET_TYPE1 or mysql_state:MYSQL_RESET_TYPE2 or mysql_state:MYSQL_RESET_TYPE3 or mysql_state:MYSQL_RESET_TYPE4 )",
+        "type:mysql_network AND (tcp_state:TCP_RESET_TYPE1 or tcp_state:TCP_RESET_TYPE2 or mysql_state:MYSQL_OK or mysql_state:MYSQL_ERROR or mysql_state:MYSQL_RESET_TYPE1 or mysql_state:MYSQL_RESET_TYPE2 or mysql_state:MYSQL_RESET_TYPE3 or mysql_state:MYSQL_RESET_TYPE4 )",
+        "*"
+      ]
+    },
+    {
+      "notice": true,
+      "enable": false,
+      "type": "filtering",
+      "collapse": true
+    }
+  ],
+  "nav": [
+    {
+      "notice": false,
+      "enable": true,
+      "collapse": false,
+      "dashboards": [
+        "IntFlow",
+        "Web ALL",
+        "Web Performance",
+        "Database Performance"
+      ],
+      "label": "Page: ",
+      "type": "dashboard_dropdown"
+    },
+    {
+      "status": "Stable",
+      "notice": false,
+      "enable": true,
+      "collapse": false,
+      "time_options": [
+        "5m",
+        "15m",
+        "1h",
+        "6h",
+        "12h",
+        "24h",
+        "2d",
+        "7d",
+        "30d"
+      ],
+      "refresh_intervals": [
+        "5s",
+        "10s",
+        "30s",
+        "1m",
+        "5m",
+        "15m",
+        "30m",
+        "1h",
+        "2h",
+        "1d"
+      ],
+      "filter_id": 0,
+      "timefield": "@timestamp",
+      "now": true,
+      "type": "timepicker"
+    }
+  ],
+  "services": {
+    "filter": {
+      "list": {
+        "0": {
+          "from": "now-5m",
+          "to": "now",
+          "field": "@timestamp",
+          "alias": "",
+          "mandate": "must",
+          "active": true,
+          "type": "time",
+          "id": 0
+        }
+      },
+      "ids": [
+        0
+      ]
+    },
+    "query": {
+      "list": {
+        "0": {
+          "enable": true,
+          "pin": true,
+          "color": "#BADFF4",
+          "alias": "ALL",
+          "query": "*",
+          "type": "lucene",
+          "id": 0
+        },
+        "1": {
+          "enable": true,
+          "pin": true,
+          "color": "#EAB839",
+          "alias": "Web",
+          "query": "type:http_network",
+          "type": "lucene",
+          "id": 1
+        },
+        "2": {
+          "enable": true,
+          "pin": true,
+          "color": "#6ED0E0",
+          "alias": "数据库",
+          "query": "type:mysql_network",
+          "type": "lucene",
+          "id": 2
+        },
+        "3": {
+          "enable": true,
+          "pin": true,
+          "color": "#EF843C",
+          "alias": "数据库访问量",
+          "query": "type:mysql_network AND (tcp_state:TCP_RESET_TYPE1 or tcp_state:TCP_RESET_TYPE2 or mysql_state:MYSQL_OK or mysql_state:MYSQL_ERROR or mysql_state:MYSQL_RESET_TYPE1 or mysql_state:MYSQL_RESET_TYPE2 or mysql_state:MYSQL_RESET_TYPE3 or mysql_state:MYSQL_RESET_TYPE4 )",
+          "type": "lucene",
+          "id": 3
+        },
+        "4": {
+          "enable": true,
+          "pin": true,
+          "color": "#E24D42",
+          "alias": "Web访问量",
+          "query": "type:http_network AND (tcp_state:TCP_RESET_TYPE1 or tcp_state:TCP_RESET_TYPE2 or http_state:HTTP_OK or http_state:HTTP_ERROR or http_state:HTTP_RESET_TYPE1 or http_state:HTTP_RESET_TYPE2 or http_state:HTTP_RESET_TYPE3 or http_state:HTTP_RESET_TYPE4 )",
+          "type": "lucene",
+          "id": 4
+        },
+        "5": {
+          "enable": true,
+          "pin": true,
+          "color": "#1F78C1",
+          "alias": "Web事件数",
+          "query": "type:http_network AND (tcp_state:TCP_RESET_TYPE1 or tcp_state:TCP_RESET_TYPE2 or http_state:HTTP_ERROR or http_state:HTTP_RESET_TYPE1 or http_state:HTTP_RESET_TYPE2 or http_state:HTTP_RESET_TYPE3 or http_state:HTTP_RESET_TYPE4 )",
+          "type": "lucene",
+          "id": 5
+        },
+        "6": {
+          "enable": true,
+          "pin": true,
+          "color": "#BA43A9",
+          "alias": "数据库事件数",
+          "query": "type:mysql_network AND (tcp_state:TCP_RESET_TYPE1 or tcp_state:TCP_RESET_TYPE2 or mysql_state:MYSQL_ERROR or mysql_state:MYSQL_RESET_TYPE1 or mysql_state:MYSQL_RESET_TYPE2 or mysql_state:MYSQL_RESET_TYPE3 or mysql_state:MYSQL_RESET_TYPE4 )",
+          "type": "lucene",
+          "id": 6
+        },
+        "7": {
+          "enable": true,
+          "pin": true,
+          "color": "#705DA0",
+          "alias": "Web成功访问",
+          "query": "type:http_network AND http_state:HTTP_OK",
+          "type": "lucene",
+          "id": 7
+        },
+        "8": {
+          "enable": true,
+          "pin": true,
+          "color": "#508642",
+          "alias": "数据库成功访问",
+          "query": "type:mysql_network AND mysql_state:MYSQL_OK",
+          "type": "lucene",
+          "id": 8
+        },
+        "9": {
+          "enable": true,
+          "pin": true,
+          "color": "#7EB26D",
+          "alias": "邮件",
+          "query": "type:http_network",
+          "type": "lucene",
+          "id": 9
+        },
+        "10": {
+          "enable": true,
+          "pin": true,
+          "color": "#0A437C",
+          "alias": "邮件访问量",
+          "query": "type:http_network AND (tcp_state:TCP_RESET_TYPE1 or tcp_state:TCP_RESET_TYPE2 or http_state:HTTP_OK or http_state:HTTP_ERROR or http_state:HTTP_RESET_TYPE1 or http_state:HTTP_RESET_TYPE2 or http_state:HTTP_RESET_TYPE3 or http_state:HTTP_RESET_TYPE4 )",
+          "type": "lucene",
+          "id": 10
+        },
+        "11": {
+          "enable": true,
+          "pin": true,
+          "color": "#C15C17",
+          "alias": "邮件事件数",
+          "query": "type:http_network AND (tcp_state:TCP_RESET_TYPE1 or tcp_state:TCP_RESET_TYPE2 or http_state:HTTP_ERROR or http_state:HTTP_RESET_TYPE1 or http_state:HTTP_RESET_TYPE2 or http_state:HTTP_RESET_TYPE3 or http_state:HTTP_RESET_TYPE4 )",
+          "type": "lucene",
+          "id": 11
+        },
+        "12": {
+          "enable": true,
+          "pin": true,
+          "color": "#890F02",
+          "alias": "邮件成功访问",
+          "query": "type:http_network AND http_state:HTTP_OK",
+          "type": "lucene",
+          "id": 12
+        },
+        "13": {
+          "enable": true,
+          "pin": true,
+          "color": "#0A437C",
+          "alias": "FTP",
+          "query": "type:mysql_network",
+          "type": "lucene",
+          "id": 13
+        },
+        "14": {
+          "enable": true,
+          "pin": true,
+          "color": "#6D1F62",
+          "alias": "FTP事件数",
+          "query": "type:mysql_network AND (tcp_state:TCP_RESET_TYPE1 or tcp_state:TCP_RESET_TYPE2 or mysql_state:MYSQL_ERROR or mysql_state:MYSQL_RESET_TYPE1 or mysql_state:MYSQL_RESET_TYPE2 or mysql_state:MYSQL_RESET_TYPE3 or mysql_state:MYSQL_RESET_TYPE4 )",
+          "type": "lucene",
+          "id": 14
+        },
+        "15": {
+          "enable": true,
+          "pin": true,
+          "color": "#584477",
+          "alias": "FTP成功访问",
+          "query": "type:mysql_network AND mysql_state:MYSQL_OK",
+          "type": "lucene",
+          "id": 15
+        },
+        "16": {
+          "enable": true,
+          "pin": true,
+          "color": "#1F78C1",
+          "alias": "Web总结点",
+          "query": "*",
+          "type": "lucene",
+          "id": 16
+        },
+        "17": {
+          "enable": true,
+          "pin": true,
+          "color": "#5195CE",
+          "alias": "数据库总节点",
+          "query": "*",
+          "type": "lucene",
+          "id": 17
+        },
+        "18": {
+          "enable": true,
+          "pin": true,
+          "color": "#1F78C1",
+          "alias": "邮件总节点",
+          "query": "*",
+          "type": "lucene",
+          "id": 18
+        },
+        "19": {
+          "enable": true,
+          "pin": true,
+          "color": "#1F78C1",
+          "alias": "FTP总节点",
+          "query": "*",
+          "type": "lucene",
+          "id": 19
+        },
+        "20": {
+          "enable": true,
+          "pin": true,
+          "color": "#508642",
+          "alias": "Web可用节点",
+          "query": "type:http_network",
+          "type": "lucene",
+          "id": 20
+        },
+        "21": {
+          "enable": true,
+          "pin": true,
+          "color": "#629E51",
+          "alias": "数据库可用节点",
+          "query": "type:mysql_network",
+          "type": "lucene",
+          "id": 21
+        },
+        "22": {
+          "enable": true,
+          "pin": true,
+          "color": "#508642",
+          "alias": "FTP可用节点",
+          "query": "type:http_network",
+          "type": "lucene",
+          "id": 22
+        },
+        "23": {
+          "enable": true,
+          "pin": true,
+          "color": "#508642",
+          "alias": "邮件可用节点",
+          "query": "*",
+          "type": "lucene",
+          "id": 23
+        }
+      },
+      "ids": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23
+      ]
+    }
+  },
+  "panel_hints": true
+}
