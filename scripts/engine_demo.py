@@ -1,15 +1,15 @@
 import threading
-import zmq, json
+import zmq, json, time
 import psycopg2, psycopg2.extras
 import ConfigParser
 from watcher import Watcher
 from elasticsearch import Elasticsearch
 from datetime import datetime
 from threading import Lock
-import pytz
+#import pytz
 
 config = ConfigParser.ConfigParser()
-config.readfp(open("/etc/intflow/config.ini", "rb"))
+config.readfp(open("/etc/rum/config.ini", "rb"))
 
 db_host = config.get('postgresql', 'host')
 db_port = int(config.get('postgresql', 'port'))
@@ -20,8 +20,6 @@ db_name = config.get('postgresql', 'db')
 es_index = config.get('elasticsearch', 'index')
 es_host = config.get('elasticsearch', 'host')
 es_port = config.get('elasticsearch', 'port')
-
-tz = config.get('intflow', 'timezone')
 
 #print "%s %s %s %s %s\n" % (db_host, db_port, db_user, db_password, db_name)
 
@@ -69,7 +67,7 @@ def service_thread():
             print "service update exception: %s" % e
             continue
 
-                
+
 
 def notifyAllAgent():
     req = context.socket(zmq.REQ)
@@ -112,33 +110,30 @@ def adapter ():
     context = zmq.Context ()
 
     bkdRecvSock = context.socket (zmq.PULL)
-    bkdRecvSock.bind ("tcp://*:60002")
+    bkdRecvSock.bind ("tcp://*:59009")
     while True:
         try:
-            data = bkdRecvSock.recv ()                                                                                                                   
+            data = bkdRecvSock.recv ()
             breakdown = json.loads (data)
-        
-            timestamp = breakdown['timestamp']
-            proto = breakdown['protocol']
-        
-            dt = datetime.utcfromtimestamp(timestamp)
+
+            #dt = datetime(breakdown['@timestamp'])
+            dt = datetime.strptime(breakdown['@timestamp'], "%Y-%m-%d %H:%M:%S")
+            breakdown['@timestamp'] = dt
+
             dt_str = str(dt.date())
-            dt2 = dt.replace(tzinfo=pytz.utc).astimezone(pytz.timezone(tz))
 
-            now = datetime.now()
-
-            print "old dt2: %s\n" % dt2
-            dt2.replace(year = now.year)
-            dt2.replace(month = now.month)
-            dt2.replace(day = now.day)
-            print "new dt2: %s\n" % dt2
-
-            breakdown['@timestamp'] = dt2
-            breakdown['type'] = proto.lower() + "_network"
             dt_str = dt_str.replace('-', '.')
             index_name = es_index + '-' + dt_str
-            print "breakdown: %s\n" % breakdown
-            es.index(index=index_name, doc_type=breakdown['type'], body=breakdown)
+
+            if breakdown['protocol'] == 'HTTP' :
+                if breakdown.has_key('http_server_latency') and breakdown.has_key('http_download_latency'):
+                    breakdown['response_time'] = int(breakdown['http_server_latency']) + int(breakdown['http_download_latency'])
+            if breakdown['protocol'] == 'MYSQL' :
+                if breakdown.has_key('mysql_server_latency') and breakdown.has_key('mysql_download_latency'):
+                    breakdown['response_time'] = int(breakdown['mysql_server_latency']) + int(breakdown['mysql_download_latency'])
+
+            #print "breakdown: %s\n" % breakdown
+            es.index(index=index_name, doc_type=breakdown['protocol'], body=breakdown)
 
         except Exception as e:
             print "ES adapter exception: %s" % e

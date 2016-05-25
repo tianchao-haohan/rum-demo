@@ -1,7 +1,8 @@
 import os, time, random
 import json, zmq
 import threading
-from threading import Thread, local  
+from threading import Thread, local
+from datetime import datetime
 import copy
 
 from watcher import Watcher
@@ -33,16 +34,15 @@ http_status_list = [200, 201, 202, 203, 300, 301, 302, 303, 400, 401, 402, 403, 
 http_method_list = ['GET', 'POST', 'PUT', 'CONNECT', 'DELETE', 'HEAD', 'OPTIONS', 'TRACE']
 http_reset_list = ["HTTP_RESET_TYPE1", "HTTP_RESET_TYPE2", "HTTP_RESET_TYPE3", "HTTP_RESET_TYPE4"]
 mysql_statements = ["SELECT * from db where a =b;", "DELETE from db where a=b;", "UPDATE db SET date='2015-03-09 11:38:05' WHERE username='test'", "INSERT INTO db (username, body, date) VALUES ('user', 'test', '2015-03-09 11:38:05')"]
-mysql_status_list = ['MYSQL_OK', 'MYSQL_OK', 'MYSQL_ERROR'] 
+mysql_status_list = ['MYSQL_OK', 'MYSQL_OK', 'MYSQL_ERROR']
 mysql_reset_list = ['MYSQL_RESET_TYPE1', 'MYSQL_RESET_TYPE2', 'MYSQL_RESET_TYPE3', 'MYSQL_RESET_TYPE4']
 
 
 mutex_brkid = threading.Lock()
 mutex_time = threading.Lock()
 
-now_secs = int(time.time())
-sbrk['@timestamp'] = now_secs #12345600
-#print "now_secs: %d\n" % now_secs
+now = datetime.now()
+sbrk['@timestamp'] = now.strftime ("%Y-%m-%d %H:%M:%S")
 sbrk['connection_id'] = 1
 #sbrk['breakdown_id'] = 111
 sbrk['source_ip'] = '192.168.1.11'
@@ -50,7 +50,7 @@ sbrk['source_port'] = 24567
 sbrk['tcp_retries'] = 234
 sbrk['tcp_retries_latency'] = 23
 sbrk['tcp_duplicate_synacks'] = 456
-sbrk['tcp_rtt'] = 200 
+sbrk['tcp_rtt'] = 200
 sbrk['tcp_mss'] = 789
 sbrk['tcp_state'] = "TCP_CONNECTED"
 sbrk['tcp_connection_latency'] = 234
@@ -68,7 +68,7 @@ def create_object (service):
 
     sbrk1['service_ip'] = service['service_ip']
     sbrk1['service_port'] = service['service_port']
-    sbrk1['protocol'] = service['protocol'] 
+    sbrk1['protocol'] = service['protocol']
     sbrk1['region_code'] = random.randint(1, 30)
     return sbrk1
 
@@ -83,13 +83,13 @@ def reset (sbrk1) :
 
     if sbrk1['protocol'] == "DEFAULT":
         sbrk1['default_exchange_size'] = 0
-        sbrk1['default_server_latency'] = 0 
+        sbrk1['default_server_latency'] = 0
 
-    elif sbrk1['protocol'] == "HTTP":   
+    elif sbrk1['protocol'] == "HTTP":
         sbrk1['request_raw'] = ""
         sbrk1['http_request_line'] = ""
         sbrk1['http_request_version'] = ""
-        sbrk1['http_method'] = "" 
+        sbrk1['http_method'] = ""
         sbrk1['http_host'] = ""
         sbrk1['http_uri'] = ""
         sbrk1['http_user_agent'] = ''
@@ -111,29 +111,29 @@ def reset (sbrk1) :
         sbrk1['http_response_connection'] = ''
 
         sbrk1['http_request_header_size'] = 0
-        sbrk1['http_request_body_size'] = 0 
-        sbrk1['http_response_header_size'] = 0 
-        sbrk1['http_response_body_size'] = 0 
-        sbrk1['http_server_latency'] = 0 
+        sbrk1['http_request_body_size'] = 0
+        sbrk1['http_response_header_size'] = 0
+        sbrk1['http_response_body_size'] = 0
+        sbrk1['http_server_latency'] = 0
         sbrk1['http_download_latency'] = 0
 
-    elif sbrk1['protocol'] == "MYSQL":   
-        sbrk1['request_raw'] = '' 
-        sbrk1['mysql_state'] = '' 
+    elif sbrk1['protocol'] == "MYSQL":
+        sbrk1['request_raw'] = ''
+        sbrk1['mysql_state'] = ''
         sbrk1['mysql_server_version'] = ''
-        sbrk1['mysql_user_name'] = ''         
-        sbrk1['mysql_connection_id'] =  0 
+        sbrk1['mysql_user_name'] = ''
+        sbrk1['mysql_connection_id'] =  0
         sbrk1['mysql_method'] =  ''
         sbrk1['mysql_query'] =  ''
         sbrk1['mysql_tables'] =  ''
-        sbrk1['response_raw'] = '' 
-        sbrk1['mysql_error_code'] = 0        
+        sbrk1['response_raw'] = ''
+        sbrk1['mysql_error_code'] = 0
         sbrk1['mysql_sql_state'] = 0
-        sbrk1['mysql_error_message'] = ''  
+        sbrk1['mysql_error_message'] = ''
 
-        sbrk1['mysql_request_size']  = 0    
-        sbrk1['mysql_response_size'] = 0   
-        sbrk1['mysql_server_latency'] = 0 
+        sbrk1['mysql_request_size']  = 0
+        sbrk1['mysql_response_size'] = 0
+        sbrk1['mysql_server_latency'] = 0
 
     return sbrk1
 
@@ -153,8 +153,8 @@ def simulate_aborted(service) :
         reset (sbrk1)
         sbrk1['tcp_total_packets'] = 123
 
-        now_secs = int(time.time())
-        sbrk1['@timestamp'] = now_secs
+        now = datetime.now()
+        sbrk1['@timestamp'] = now.strftime ("%Y-%m-%d %H:%M:%S")
         sock.send(json.dumps(sbrk1))
 
         sbrk2 = copy.copy(sbrk1)
@@ -164,8 +164,8 @@ def simulate_aborted(service) :
             sbrk2['connection_id'] = sbrk['connection_id']
             mutex_brkid.release()
 
-        now_secs = int(time.time())
-        sbrk2['@timestamp'] = now_secs
+        now = datetime.now()
+        sbrk2['@timestamp'] = now.strftime ("%Y-%m-%d %H:%M:%S")
         sock.send(json.dumps(sbrk2))
 
 def simulate_connected(service, sock) :
@@ -182,8 +182,8 @@ def simulate_connected(service, sock) :
     reset (sbrk1)
     sbrk1['tcp_total_packets'] = 213
 
-    now_secs = int(time.time())
-    sbrk1['@timestamp'] = now_secs
+    now = datetime.now()
+    sbrk1['@timestamp'] = now.strftime ("%Y-%m-%d %H:%M:%S")
     sock.send(json.dumps(sbrk1))
 
     return connection_id
@@ -206,7 +206,7 @@ def fullfil_sbreakdown (sbrk1, connection_id, status_code, method) :
     sbrk1['tcp_retries'] = 0
     sbrk1['tcp_retries_latency'] = 0
     sbrk1['tcp_duplicate_synacks'] = 0
-    sbrk1['tcp_rtt'] = 0 
+    sbrk1['tcp_rtt'] = 0
     sbrk1['tcp_mss'] = 0
     sbrk1['tcp_connection_latency'] = 0
     sbrk1['tcp_total_packets'] = random.randint(800, 1000)
@@ -224,7 +224,7 @@ def fullfil_sbreakdown (sbrk1, connection_id, status_code, method) :
         sbrk1['default_exchange_size'] = 0
         sbrk1['default_server_latency'] = 0
 
-    elif sbrk1['protocol'] == "HTTP":   
+    elif sbrk1['protocol'] == "HTTP":
         sbrk1['http_request_line'] = method + " /api/metrics/list HTTP/1.1"
         sbrk1['http_request_version'] = "HTTP 1.1"
         sbrk1['http_method'] = method
@@ -261,10 +261,10 @@ def fullfil_sbreakdown (sbrk1, connection_id, status_code, method) :
         sbrk1['http_download_latency'] = random.randint(0, 300)
         sbrk1['http_response_latency'] = sbrk1['http_server_latency'] + sbrk1['http_download_latency']
 
-    elif sbrk1['protocol'] == "MYSQL":   
+    elif sbrk1['protocol'] == "MYSQL":
         sbrk1['mysql_state'] = status_code
         sbrk1['mysql_server_version'] = "mysql 5.1"
-        sbrk1['mysql_user_name'] = 'user'         
+        sbrk1['mysql_user_name'] = 'user'
         sbrk1['mysql_connection_id'] = connection_id
 
         sbrk1['mysql_method'] =  'SELECT'
@@ -273,17 +273,17 @@ post.title AS post_title, post.body AS post_body, post.pub_date AS post_pub_date
 FROM post ORDER BY post.pub_date"
 
         if status_code == "MYSQL_OK" :
-            sbrk1['mysql_error_code'] = 0        
+            sbrk1['mysql_error_code'] = 0
             sbrk1['mysql_sql_state'] = 0
-            sbrk1['mysql_error_message'] = ''  
+            sbrk1['mysql_error_message'] = ''
             sbrk1['mysql_request_size']  = 1024
             sbrk1['mysql_response_size'] = 9000
             sbrk1['mysql_server_latency'] = random.randint(500, 1200)
             sbrk1['mysql_download_latency'] = random.randint(0, 300)
         else :
-            sbrk1['mysql_error_code'] = get_mysql_error_code()         
+            sbrk1['mysql_error_code'] = get_mysql_error_code()
             sbrk1['mysql_sql_state'] = 1
-            sbrk1['mysql_error_message'] = 'test'  
+            sbrk1['mysql_error_message'] = 'test'
             sbrk1['mysql_request_size']  = 512
             sbrk1['mysql_response_size'] = 499
 
@@ -298,8 +298,8 @@ def simulate_exchanging(service, connection_id, status_code, method, sock) :
     sbrk1 = fullfil_sbreakdown (sbrk1, connection_id, status_code, method)
 
     time.sleep(12)
-    now_secs = int(time.time())
-    sbrk1['@timestamp'] = now_secs
+    now = datetime.now()
+    sbrk1['@timestamp'] = now.strftime ("%Y-%m-%d %H:%M:%S")
     sock.send(json.dumps(sbrk1))
 
 ###END
@@ -317,27 +317,27 @@ def simulate_closed(service, connection_id, sock) :
     sbrk1['tcp_tiny_packets'] = 0
     sbrk1['tcp_paws_packets'] = 0
     sbrk1['tcp_retransmitted_packets'] = 0
-    sbrk1['tcp_out_of_order_packets'] = 0  
-    sbrk1['tcp_zero_windows'] = 0 
-    sbrk1['tcp_duplicate_acks'] = 0 
+    sbrk1['tcp_out_of_order_packets'] = 0
+    sbrk1['tcp_zero_windows'] = 0
+    sbrk1['tcp_duplicate_acks'] = 0
 
     if sbrk1['protocol'] == "DEFAULT":
         sbrk1['tcp_tiny_packets'] = 222
         sbrk1['tcp_paws_packets'] = 333
         sbrk1['tcp_retransmitted_packets'] = 444
-        sbrk1['tcp_out_of_order_packets'] =555 
-        sbrk1['tcp_zero_windows'] = 666 
-        sbrk1['tcp_duplicate_acks'] = 777 
+        sbrk1['tcp_out_of_order_packets'] =555
+        sbrk1['tcp_zero_windows'] = 666
+        sbrk1['tcp_duplicate_acks'] = 777
 
         sbrk1['default_exchange_size'] = 1024
-        sbrk1['default_server_latency'] = 497 
+        sbrk1['default_server_latency'] = 497
 
     else:
         sbrk1 = reset (sbrk1)
 
     time.sleep(12)
-    now_secs = int(time.time())
-    sbrk1['@timestamp'] = now_secs
+    now = datetime.now()
+    sbrk1['@timestamp'] = now.strftime ("%Y-%m-%d %H:%M:%S")
     sock.send(json.dumps(sbrk1))
 
 def simulate_reset(service, connection_id, tcp_reset_type, reset_type, sock) :
@@ -345,19 +345,19 @@ def simulate_reset(service, connection_id, tcp_reset_type, reset_type, sock) :
     sbrk1 = reset (sbrk1)
     sbrk1['connection_id'] = connection_id
 
-    if sbrk1['protocol'] == "HTTP":   
+    if sbrk1['protocol'] == "HTTP":
         sbrk1 = fullfil_sbreakdown (sbrk1, connection_id, 0, 'GET')
         sbrk1['http_state'] = reset_type
 
 
-    elif sbrk1['protocol'] == "MYSQL":   
+    elif sbrk1['protocol'] == "MYSQL":
         sbrk1 = fullfil_sbreakdown (sbrk1, connection_id, 0, 'SELECT')
         sbrk1['mysql_state'] = reset_type
 
     sbrk1['tcp_state'] = tcp_reset_type
 
-    now_secs = int(time.time())
-    sbrk1['@timestamp'] = now_secs
+    now = datetime.now()
+    sbrk1['@timestamp'] = now.strftime ("%Y-%m-%d %H:%M:%S")
     sock.send(json.dumps(sbrk1))
 
 def http_normal_simulator (service):
