@@ -1,0 +1,908 @@
+[
+  {
+    "_id": "服务组1",
+    "_type": "dashboard",
+    "_source": {
+      "title": "服务组1",
+      "hits": 0,
+      "description": "",
+      "panelsJSON": "[{\"col\":4,\"id\":\"Web可用性\",\"panelIndex\":1,\"row\":1,\"size_x\":3,\"size_y\":3,\"type\":\"visualization\"},{\"col\":1,\"id\":\"Web响应时间\",\"panelIndex\":2,\"row\":1,\"size_x\":3,\"size_y\":3,\"type\":\"visualization\"},{\"col\":7,\"id\":\"Web服务响应时间健康状况\",\"panelIndex\":3,\"row\":1,\"size_x\":3,\"size_y\":3,\"type\":\"visualization\"},{\"id\":\"Web服务可用性健康状况\",\"type\":\"visualization\",\"panelIndex\":4,\"size_x\":3,\"size_y\":3,\"col\":10,\"row\":1}]",
+      "optionsJSON": "{\"darkTheme\":false}",
+      "uiStateJSON": "{\"P-1\":{\"spy\":{\"mode\":{\"fill\":false,\"name\":null}},\"vis\":{\"colors\":{\"失败访问\":\"#BF1B00\",\"成功访问\":\"#7EB26D\"}}},\"P-3\":{\"vis\":{\"colors\":{\"健康服务\":\"#508642\",\"异常服务\":\"#511749\"}}}}",
+      "version": 1,
+      "timeRestore": true,
+      "timeTo": "now",
+      "timeFrom": "now-7d",
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"filter\":[{\"query\":{\"query_string\":{\"analyze_wildcard\":true,\"query\":\"*\"}}}]}"
+      }
+    }
+  },
+  {
+    "_id": "New-Dashboard",
+    "_type": "dashboard",
+    "_source": {
+      "title": "New Dashboard",
+      "hits": 0,
+      "description": "",
+      "panelsJSON": "[{\"id\":\"Server2包重传统计\",\"type\":\"visualization\",\"panelIndex\":1,\"size_x\":6,\"size_y\":5,\"col\":1,\"row\":1},{\"id\":\"Server2所在子网包重传\",\"type\":\"visualization\",\"panelIndex\":2,\"size_x\":6,\"size_y\":5,\"col\":7,\"row\":1}]",
+      "optionsJSON": "{\"darkTheme\":false}",
+      "uiStateJSON": "{}",
+      "version": 1,
+      "timeRestore": false,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"filter\":[{\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}}}]}"
+      }
+    }
+  },
+  {
+    "_id": "服务1在Server2响应时间对比统计",
+    "_type": "dashboard",
+    "_source": {
+      "title": "服务1在Server2响应时间对比统计",
+      "hits": 0,
+      "description": "",
+      "panelsJSON": "[{\"col\":1,\"id\":\"服务1在Server2\",\"panelIndex\":5,\"row\":1,\"size_x\":6,\"size_y\":4,\"type\":\"visualization\"},{\"id\":\"Server2上各服务健康状况分布\",\"type\":\"visualization\",\"panelIndex\":6,\"size_x\":6,\"size_y\":4,\"col\":7,\"row\":1}]",
+      "optionsJSON": "{\"darkTheme\":false}",
+      "uiStateJSON": "{\"P-5\":{\"vis\":{\"legendOpen\":false}},\"P-6\":{\"vis\":{\"colors\":{\"异常服务\":\"#511749\",\"健康服务\":\"#508642\"}}}}",
+      "version": 1,
+      "timeRestore": true,
+      "timeTo": "now",
+      "timeFrom": "now-7d",
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"filter\":[{\"query\":{\"query_string\":{\"analyze_wildcard\":true,\"query\":\"*\"}}}]}"
+      }
+    }
+  },
+  {
+    "_id": "服务1在各Server响应时间健康状况",
+    "_type": "dashboard",
+    "_source": {
+      "title": "服务1在各Server响应时间健康状况",
+      "hits": 0,
+      "description": "",
+      "panelsJSON": "[{\"id\":\"服务1在Server1\",\"type\":\"visualization\",\"panelIndex\":1,\"size_x\":6,\"size_y\":4,\"col\":1,\"row\":1},{\"id\":\"服务1在Server2\",\"type\":\"visualization\",\"panelIndex\":2,\"size_x\":5,\"size_y\":4,\"col\":8,\"row\":1}]",
+      "optionsJSON": "{\"darkTheme\":false}",
+      "uiStateJSON": "{}",
+      "version": 1,
+      "timeRestore": true,
+      "timeTo": "now",
+      "timeFrom": "now-7d",
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"filter\":[{\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}}}]}"
+      }
+    }
+  },
+  {
+    "_id": "服务组1各服务响应时间健康状况",
+    "_type": "dashboard",
+    "_source": {
+      "title": "服务组1各服务响应时间健康状况",
+      "hits": 0,
+      "description": "",
+      "panelsJSON": "[{\"id\":\"服务1响应时间健康状况\",\"type\":\"visualization\",\"panelIndex\":1,\"size_x\":6,\"size_y\":3,\"col\":1,\"row\":1},{\"id\":\"服务2响应时间健康状况\",\"type\":\"visualization\",\"panelIndex\":2,\"size_x\":6,\"size_y\":3,\"col\":7,\"row\":1}]",
+      "optionsJSON": "{\"darkTheme\":false}",
+      "uiStateJSON": "{}",
+      "version": 1,
+      "timeRestore": true,
+      "timeTo": "now",
+      "timeFrom": "now-7d",
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"filter\":[{\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}}}]}"
+      }
+    }
+  },
+  {
+    "_id": "Server2性能状况分析",
+    "_type": "dashboard",
+    "_source": {
+      "title": "Server2性能状况分析",
+      "hits": 0,
+      "description": "",
+      "panelsJSON": "[{\"col\":1,\"id\":\"Server2包重传统计\",\"panelIndex\":1,\"row\":1,\"size_x\":6,\"size_y\":5,\"type\":\"visualization\"},{\"col\":1,\"id\":\"CPU\",\"panelIndex\":3,\"row\":6,\"size_x\":6,\"size_y\":2,\"type\":\"visualization\"},{\"col\":7,\"id\":\"Memory\",\"panelIndex\":4,\"row\":6,\"size_x\":6,\"size_y\":2,\"type\":\"visualization\"},{\"col\":1,\"id\":\"Disk\",\"panelIndex\":5,\"row\":8,\"size_x\":6,\"size_y\":2,\"type\":\"visualization\"},{\"col\":7,\"id\":\"NIC\",\"panelIndex\":6,\"row\":8,\"size_x\":6,\"size_y\":2,\"type\":\"visualization\"},{\"col\":1,\"id\":\"OS\",\"panelIndex\":7,\"row\":10,\"size_x\":6,\"size_y\":2,\"type\":\"visualization\"},{\"col\":7,\"id\":\"WebSphere\",\"panelIndex\":8,\"row\":10,\"size_x\":6,\"size_y\":2,\"type\":\"visualization\"},{\"col\":1,\"id\":\"访问量\",\"panelIndex\":9,\"row\":12,\"size_x\":6,\"size_y\":3,\"type\":\"visualization\"},{\"col\":7,\"id\":\"访问量按服务分布\",\"panelIndex\":10,\"row\":12,\"size_x\":6,\"size_y\":3,\"type\":\"visualization\"},{\"col\":1,\"id\":\"流量\",\"panelIndex\":11,\"row\":15,\"size_x\":6,\"size_y\":3,\"type\":\"visualization\"},{\"col\":7,\"id\":\"流量按服务分布\",\"panelIndex\":12,\"row\":15,\"size_x\":6,\"size_y\":3,\"type\":\"visualization\"},{\"id\":\"Server2所在子网X包重传\",\"type\":\"visualization\",\"panelIndex\":13,\"size_x\":6,\"size_y\":5,\"col\":7,\"row\":1}]",
+      "optionsJSON": "{\"darkTheme\":false}",
+      "uiStateJSON": "{}",
+      "version": 1,
+      "timeRestore": true,
+      "timeTo": "now",
+      "timeFrom": "now-7d",
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"filter\":[{\"query\":{\"query_string\":{\"analyze_wildcard\":true,\"query\":\"*\"}}}]}"
+      }
+    }
+  },
+  {
+    "_id": "子网1网络性能统计",
+    "_type": "dashboard",
+    "_source": {
+      "title": "子网1网络性能统计",
+      "hits": 0,
+      "description": "",
+      "panelsJSON": "[{\"col\":1,\"id\":\"总字节数\",\"panelIndex\":2,\"row\":3,\"size_x\":9,\"size_y\":2,\"type\":\"visualization\"},{\"col\":10,\"id\":\"各Server字节数统计\",\"panelIndex\":3,\"row\":3,\"size_x\":3,\"size_y\":2,\"type\":\"visualization\"},{\"col\":1,\"id\":\"TCP-MSS-ampersand-ampersand-RTT\",\"panelIndex\":4,\"row\":1,\"size_x\":3,\"size_y\":2,\"type\":\"visualization\"},{\"col\":1,\"id\":\"总包数\",\"panelIndex\":6,\"row\":5,\"size_x\":9,\"size_y\":2,\"type\":\"visualization\"},{\"col\":10,\"id\":\"各Server包数统计\",\"panelIndex\":7,\"row\":5,\"size_x\":3,\"size_y\":2,\"type\":\"visualization\"},{\"col\":1,\"id\":\"包重传\",\"panelIndex\":8,\"row\":9,\"size_x\":9,\"size_y\":2,\"type\":\"visualization\"},{\"col\":10,\"id\":\"各Server包重传分布\",\"panelIndex\":9,\"row\":9,\"size_x\":3,\"size_y\":2,\"type\":\"visualization\"},{\"col\":1,\"id\":\"包乱序统计\",\"panelIndex\":10,\"row\":7,\"size_x\":9,\"size_y\":2,\"type\":\"visualization\"},{\"col\":10,\"id\":\"各Server包乱序分布\",\"panelIndex\":11,\"row\":7,\"size_x\":3,\"size_y\":2,\"type\":\"visualization\"},{\"id\":\"RTT在各Server分布\",\"type\":\"visualization\",\"panelIndex\":13,\"size_x\":9,\"size_y\":2,\"col\":4,\"row\":1}]",
+      "optionsJSON": "{\"darkTheme\":false}",
+      "uiStateJSON": "{}",
+      "version": 1,
+      "timeRestore": true,
+      "timeTo": "now",
+      "timeFrom": "now-7d",
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"filter\":[{\"query\":{\"query_string\":{\"analyze_wildcard\":true,\"query\":\"*\"}}}]}"
+      }
+    }
+  },
+  {
+    "_id": "Server1网络性能",
+    "_type": "dashboard",
+    "_source": {
+      "title": "Server1网络性能",
+      "hits": 0,
+      "description": "",
+      "panelsJSON": "[{\"col\":1,\"id\":\"Server1总流量\",\"panelIndex\":1,\"row\":1,\"size_x\":9,\"size_y\":2,\"type\":\"visualization\"},{\"col\":1,\"id\":\"包乱序统计\",\"panelIndex\":8,\"row\":5,\"size_x\":9,\"size_y\":2,\"type\":\"visualization\"},{\"col\":10,\"id\":\"流量按服务分布\",\"panelIndex\":9,\"row\":1,\"size_x\":3,\"size_y\":2,\"type\":\"visualization\"},{\"col\":1,\"id\":\"包重传\",\"panelIndex\":10,\"row\":7,\"size_x\":9,\"size_y\":2,\"type\":\"visualization\"},{\"col\":1,\"id\":\"总包数\",\"panelIndex\":12,\"row\":3,\"size_x\":9,\"size_y\":2,\"type\":\"visualization\"},{\"col\":10,\"id\":\"包数按服务分布\",\"panelIndex\":13,\"row\":3,\"size_x\":3,\"size_y\":2,\"type\":\"visualization\"},{\"col\":10,\"id\":\"包重传按服务分布\",\"panelIndex\":14,\"row\":7,\"size_x\":3,\"size_y\":2,\"type\":\"visualization\"},{\"col\":10,\"id\":\"包乱序按服务分布\",\"panelIndex\":15,\"row\":5,\"size_x\":3,\"size_y\":2,\"type\":\"visualization\"},{\"col\":7,\"id\":\"零窗口\",\"panelIndex\":16,\"row\":13,\"size_x\":6,\"size_y\":2,\"type\":\"visualization\"},{\"col\":1,\"id\":\"进-slash-出向总字节数统计\",\"panelIndex\":17,\"row\":9,\"size_x\":9,\"size_y\":4,\"type\":\"visualization\"},{\"col\":1,\"id\":\"重复的ack\",\"panelIndex\":18,\"row\":13,\"size_x\":6,\"size_y\":2,\"type\":\"visualization\"},{\"col\":1,\"id\":\"paws\",\"panelIndex\":20,\"row\":19,\"size_x\":6,\"size_y\":2,\"type\":\"visualization\"},{\"col\":10,\"id\":\"In流量按服务分布\",\"panelIndex\":21,\"row\":9,\"size_x\":3,\"size_y\":2,\"type\":\"visualization\"},{\"col\":10,\"id\":\"OUT流量按服务分布\",\"panelIndex\":22,\"row\":11,\"size_x\":3,\"size_y\":2,\"type\":\"visualization\"},{\"col\":1,\"id\":\"平均每次连接的重试次数\",\"panelIndex\":23,\"row\":15,\"size_x\":6,\"size_y\":2,\"type\":\"visualization\"},{\"col\":7,\"id\":\"平均每次连接重复的syncack\",\"panelIndex\":24,\"row\":15,\"size_x\":6,\"size_y\":2,\"type\":\"visualization\"},{\"col\":1,\"id\":\"平均每次连接的重试时间\",\"panelIndex\":25,\"row\":17,\"size_x\":6,\"size_y\":2,\"type\":\"visualization\"},{\"col\":7,\"id\":\"平均每次连接的连接时间\",\"panelIndex\":26,\"row\":17,\"size_x\":6,\"size_y\":2,\"type\":\"visualization\"},{\"id\":\"平均RTT\",\"type\":\"visualization\",\"panelIndex\":27,\"size_x\":6,\"size_y\":2,\"col\":7,\"row\":19}]",
+      "optionsJSON": "{\"darkTheme\":false}",
+      "uiStateJSON": "{}",
+      "version": 1,
+      "timeRestore": true,
+      "timeTo": "2016-05-27T21:10:39.437Z",
+      "timeFrom": "2016-05-27T18:50:39.437Z",
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"filter\":[{\"query\":{\"query_string\":{\"analyze_wildcard\":true,\"query\":\"*\"}}}]}"
+      }
+    }
+  },
+  {
+    "_id": "Web服务响应时间健康状况",
+    "_type": "visualization",
+    "_source": {
+      "title": "Web服务响应时间健康状况",
+      "visState": "{\"title\":\"New Visualization\",\"type\":\"pie\",\"params\":{\"shareYAxis\":true,\"addTooltip\":true,\"addLegend\":true,\"isDonut\":true},\"aggs\":[{\"id\":\"1\",\"type\":\"count\",\"schema\":\"metric\",\"params\":{\"customLabel\":\"服务响应时间健康状况\"}},{\"id\":\"2\",\"type\":\"filters\",\"schema\":\"segment\",\"params\":{\"filters\":[{\"input\":{\"query\":{\"query_string\":{\"query\":\"http_state: HTTP_OK\",\"analyze_wildcard\":true}}},\"label\":\"健康服务\"},{\"input\":{\"query\":{\"query_string\":{\"query\":\"http_state: HTTP_ERROR\",\"analyze_wildcard\":true}}},\"label\":\"异常服务\"}]}}],\"listeners\":{}}",
+      "uiStateJSON": "{\"vis\":{\"colors\":{\"异常服务\":\"#511749\"}}}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"rum-*\",\"query\":{\"query_string\":{\"query\":\"protocol:\\\"HTTP\\\"\",\"analyze_wildcard\":true}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "服务1响应时间健康状况",
+    "_type": "visualization",
+    "_source": {
+      "title": "服务1响应时间健康状况",
+      "visState": "{\"title\":\"New Visualization\",\"type\":\"pie\",\"params\":{\"shareYAxis\":true,\"addTooltip\":true,\"addLegend\":true,\"isDonut\":true},\"aggs\":[{\"id\":\"1\",\"type\":\"count\",\"schema\":\"metric\",\"params\":{\"customLabel\":\"服务1响应时间健康状况\"}},{\"id\":\"2\",\"type\":\"filters\",\"schema\":\"segment\",\"params\":{\"filters\":[{\"input\":{\"query\":{\"query_string\":{\"query\":\"http_state: HTTP_OK\",\"analyze_wildcard\":true}}},\"label\":\"响应时间\"},{\"input\":{\"query\":{\"query_string\":{\"query\":\"http_state: HTTP_ERROR\",\"analyze_wildcard\":true}}},\"label\":\"响应时间2\"}]}}],\"listeners\":{}}",
+      "uiStateJSON": "{\"vis\":{\"colors\":{\"响应时间2\":\"#508642\",\"响应时间\":\"#E0F9D7\"}}}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"rum-*\",\"query\":{\"query_string\":{\"analyze_wildcard\":true,\"query\":\"protocol:\\\"HTTP\\\"\"}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "服务2响应时间健康状况",
+    "_type": "visualization",
+    "_source": {
+      "title": "服务2响应时间健康状况",
+      "visState": "{\"title\":\"New Visualization\",\"type\":\"pie\",\"params\":{\"shareYAxis\":true,\"addTooltip\":true,\"addLegend\":true,\"isDonut\":true},\"aggs\":[{\"id\":\"1\",\"type\":\"count\",\"schema\":\"metric\",\"params\":{\"customLabel\":\"服务2响应时间健康状况\"}},{\"id\":\"2\",\"type\":\"filters\",\"schema\":\"segment\",\"params\":{\"filters\":[{\"input\":{\"query\":{\"query_string\":{\"query\":\"http_state: HTTP_OK\",\"analyze_wildcard\":true}}},\"label\":\"响应时间\"},{\"input\":{\"query\":{\"query_string\":{\"query\":\"http_state: HTTP_ERROR\",\"analyze_wildcard\":true}}},\"label\":\"响应时间2\"}]}}],\"listeners\":{}}",
+      "uiStateJSON": "{\"vis\":{\"colors\":{\"响应时间\":\"#DEDAF7\",\"响应时间2\":\"#890F02\"}}}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"rum-*\",\"query\":{\"query_string\":{\"analyze_wildcard\":true,\"query\":\"protocol:\\\"HTTP\\\"\"}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "Web服务可用性健康状况",
+    "_type": "visualization",
+    "_source": {
+      "title": "Web服务可用性健康状况",
+      "visState": "{\"title\":\"Web服务可用性健康状况\",\"type\":\"pie\",\"params\":{\"addLegend\":true,\"addTooltip\":true,\"isDonut\":true,\"shareYAxis\":true},\"aggs\":[{\"id\":\"1\",\"type\":\"count\",\"schema\":\"metric\",\"params\":{\"customLabel\":\"Web服务可用性健康状况\"}},{\"id\":\"2\",\"type\":\"filters\",\"schema\":\"segment\",\"params\":{\"filters\":[{\"input\":{\"query\":{\"query_string\":{\"analyze_wildcard\":true,\"query\":\"http_state: HTTP_OK\"}}},\"label\":\"健康服务\"},{\"input\":{\"query\":{\"query_string\":{\"analyze_wildcard\":true,\"query\":\"http_state: HTTP_ERROR\"}}},\"label\":\"异常服务\"}]}}],\"listeners\":{}}",
+      "uiStateJSON": "{\"vis\":{\"colors\":{\"异常服务\":\"#6D1F62\"}}}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"rum-*\",\"query\":{\"query_string\":{\"analyze_wildcard\":true,\"query\":\"protocol:\\\"HTTP\\\"\"}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "Web可用性",
+    "_type": "visualization",
+    "_source": {
+      "title": "Web可用性",
+      "visState": "{\"title\":\"Web可用性\",\"type\":\"pie\",\"params\":{\"shareYAxis\":true,\"addTooltip\":true,\"addLegend\":true,\"isDonut\":true},\"aggs\":[{\"id\":\"1\",\"type\":\"count\",\"schema\":\"metric\",\"params\":{\"customLabel\":\"可用性\"}},{\"id\":\"2\",\"type\":\"filters\",\"schema\":\"segment\",\"params\":{\"filters\":[{\"input\":{\"query\":{\"query_string\":{\"query\":\"http_state: HTTP_OK\",\"analyze_wildcard\":true}}},\"label\":\"成功访问\"},{\"input\":{\"query\":{\"query_string\":{\"query\":\"http_state: HTTP_ERROR\",\"analyze_wildcard\":true}}},\"label\":\"失败访问\"}]}}],\"listeners\":{}}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"rum-*\",\"query\":{\"query_string\":{\"query\":\"protocol:\\\"HTTP\\\"\",\"analyze_wildcard\":true}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "Web响应时间",
+    "_type": "visualization",
+    "_source": {
+      "title": "Web响应时间",
+      "visState": "{\"title\":\"Web响应时间\",\"type\":\"metric\",\"params\":{\"handleNoResults\":true,\"fontSize\":\"26\"},\"aggs\":[{\"id\":\"1\",\"type\":\"avg\",\"schema\":\"metric\",\"params\":{\"field\":\"response_time\",\"customLabel\":\"平均响应时间\"}},{\"id\":\"2\",\"type\":\"percentiles\",\"schema\":\"metric\",\"params\":{\"field\":\"response_time\",\"percents\":[50,95,99],\"customLabel\":\"百分位数\"}}],\"listeners\":{}}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"rum-*\",\"query\":{\"query_string\":{\"query\":\"protocol:\\\"HTTP\\\"\",\"analyze_wildcard\":true}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "Server2包重传统计",
+    "_type": "visualization",
+    "_source": {
+      "title": "Server2包重传统计",
+      "visState": "{\"aggs\":[{\"id\":\"1\",\"params\":{\"customLabel\":\"重传包数\",\"field\":\"tcp_retransmitted_packets\"},\"schema\":\"metric\",\"type\":\"avg\"},{\"id\":\"2\",\"params\":{\"customInterval\":\"2h\",\"customLabel\":\"时间戳\",\"extended_bounds\":{},\"field\":\"@timestamp\",\"interval\":\"auto\",\"min_doc_count\":1},\"schema\":\"segment\",\"type\":\"date_histogram\"},{\"id\":\"3\",\"params\":{\"customLabel\":\"包重传警戒值\",\"field\":\"包重传警戒值\"},\"schema\":\"metric\",\"type\":\"avg\"}],\"listeners\":{},\"params\":{\"addLegend\":true,\"addTimeMarker\":false,\"addTooltip\":true,\"defaultYExtents\":false,\"drawLinesBetweenPoints\":true,\"interpolate\":\"linear\",\"radiusRatio\":9,\"scale\":\"linear\",\"setYExtents\":false,\"shareYAxis\":true,\"showCircles\":true,\"smoothLines\":false,\"times\":[],\"yAxis\":{}},\"title\":\"Server2包重传统计\",\"type\":\"line\"}",
+      "uiStateJSON": "{\"vis\":{\"legendOpen\":true,\"colors\":{\"包重传警戒值\":\"#BF1B00\"}}}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"rum-*\",\"query\":{\"query_string\":{\"analyze_wildcard\":true,\"query\":\"protocol:\\\"HTTP\\\"\"}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "Server2所在子网包重传",
+    "_type": "visualization",
+    "_source": {
+      "title": "Server2所在子网包重传",
+      "visState": "{\"aggs\":[{\"id\":\"1\",\"params\":{\"customLabel\":\"重传包数\",\"field\":\"tcp_retransmitted_packets\"},\"schema\":\"metric\",\"type\":\"avg\"},{\"id\":\"2\",\"params\":{\"customInterval\":\"2h\",\"customLabel\":\"时间戳\",\"extended_bounds\":{},\"field\":\"@timestamp\",\"interval\":\"auto\",\"min_doc_count\":1},\"schema\":\"segment\",\"type\":\"date_histogram\"},{\"id\":\"3\",\"params\":{\"customLabel\":\"包重传警戒值\",\"field\":\"包重传警戒值\"},\"schema\":\"metric\",\"type\":\"avg\"}],\"listeners\":{},\"params\":{\"addLegend\":true,\"addTimeMarker\":false,\"addTooltip\":true,\"defaultYExtents\":false,\"drawLinesBetweenPoints\":true,\"interpolate\":\"linear\",\"radiusRatio\":9,\"scale\":\"linear\",\"setYExtents\":false,\"shareYAxis\":true,\"showCircles\":true,\"smoothLines\":false,\"times\":[],\"yAxis\":{}},\"title\":\"Server2包重传统计\",\"type\":\"line\"}",
+      "uiStateJSON": "{\"vis\":{\"colors\":{\"包重传警戒值\":\"#BF1B00\"},\"legendOpen\":true}}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"rum-*\",\"query\":{\"query_string\":{\"analyze_wildcard\":true,\"query\":\"protocol:\\\"HTTP\\\"\"}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "Server2上各服务健康状况分布",
+    "_type": "visualization",
+    "_source": {
+      "title": "Server2上各服务健康状况分布",
+      "visState": "{\"title\":\"Server1上各服务健康状况分布\",\"type\":\"pie\",\"params\":{\"shareYAxis\":true,\"addTooltip\":true,\"addLegend\":true,\"isDonut\":true},\"aggs\":[{\"id\":\"1\",\"type\":\"count\",\"schema\":\"metric\",\"params\":{\"customLabel\":\"服务响应时间健康状况\"}},{\"id\":\"2\",\"type\":\"filters\",\"schema\":\"segment\",\"params\":{\"filters\":[{\"input\":{\"query\":{\"query_string\":{\"query\":\"http_state: HTTP_OK\",\"analyze_wildcard\":true}}},\"label\":\"健康服务\"},{\"input\":{\"query\":{\"query_string\":{\"query\":\"http_state: HTTP_ERROR\",\"analyze_wildcard\":true}}},\"label\":\"异常服务\"}]}}],\"listeners\":{}}",
+      "uiStateJSON": "{\"vis\":{\"colors\":{\"异常服务\":\"#511749\"}}}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"rum-*\",\"query\":{\"query_string\":{\"query\":\"protocol:\\\"HTTP\\\"\",\"analyze_wildcard\":true}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "Server1上各服务健康状况分布",
+    "_type": "visualization",
+    "_source": {
+      "title": "Server1上各服务健康状况分布",
+      "visState": "{\"title\":\"Web服务响应时间健康状况\",\"type\":\"pie\",\"params\":{\"shareYAxis\":true,\"addTooltip\":true,\"addLegend\":true,\"isDonut\":true},\"aggs\":[{\"id\":\"1\",\"type\":\"count\",\"schema\":\"metric\",\"params\":{\"customLabel\":\"服务响应时间健康状况\"}},{\"id\":\"2\",\"type\":\"filters\",\"schema\":\"segment\",\"params\":{\"filters\":[{\"input\":{\"query\":{\"query_string\":{\"query\":\"http_state: HTTP_OK\",\"analyze_wildcard\":true}}},\"label\":\"健康服务\"},{\"input\":{\"query\":{\"query_string\":{\"query\":\"http_state: HTTP_ERROR\",\"analyze_wildcard\":true}}},\"label\":\"异常服务\"}]}}],\"listeners\":{}}",
+      "uiStateJSON": "{\"vis\":{\"colors\":{\"异常服务\":\"#511749\"}}}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"rum-*\",\"query\":{\"query_string\":{\"query\":\"protocol:\\\"HTTP\\\"\",\"analyze_wildcard\":true}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "服务1在server1响应时间健康状况",
+    "_type": "visualization",
+    "_source": {
+      "title": "服务1在server1响应时间健康状况",
+      "visState": "{\"title\":\"服务1响应时间健康状况\",\"type\":\"pie\",\"params\":{\"shareYAxis\":true,\"addTooltip\":true,\"addLegend\":true,\"isDonut\":true},\"aggs\":[{\"id\":\"1\",\"type\":\"count\",\"schema\":\"metric\",\"params\":{\"customLabel\":\"服务1响应时间健康状况\"}},{\"id\":\"2\",\"type\":\"filters\",\"schema\":\"segment\",\"params\":{\"filters\":[{\"input\":{\"query\":{\"query_string\":{\"query\":\"http_state: HTTP_OK\",\"analyze_wildcard\":true}}},\"label\":\"响应时间\"},{\"input\":{\"query\":{\"query_string\":{\"query\":\"http_state: HTTP_ERROR\",\"analyze_wildcard\":true}}},\"label\":\"响应时间2\"}]}}],\"listeners\":{}}",
+      "uiStateJSON": "{\"vis\":{\"colors\":{\"响应时间2\":\"#508642\",\"响应时间\":\"#E0F9D7\"}}}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"rum-*\",\"query\":{\"query_string\":{\"analyze_wildcard\":true,\"query\":\"protocol:\\\"HTTP\\\"\"}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "服务1在Server2",
+    "_type": "visualization",
+    "_source": {
+      "title": "服务1在Server2",
+      "visState": "{\"title\":\"New Visualization\",\"type\":\"pie\",\"params\":{\"shareYAxis\":true,\"addTooltip\":true,\"addLegend\":true,\"isDonut\":true},\"aggs\":[{\"id\":\"1\",\"type\":\"count\",\"schema\":\"metric\",\"params\":{\"customLabel\":\"服务1在server2\"}},{\"id\":\"2\",\"type\":\"filters\",\"schema\":\"segment\",\"params\":{\"filters\":[{\"input\":{\"query\":{\"query_string\":{\"query\":\"http_state: HTTP_OK\",\"analyze_wildcard\":true}}},\"label\":\"响应时间1\"},{\"input\":{\"query\":{\"query_string\":{\"query\":\"http_state: HTTP_ERROR\",\"analyze_wildcard\":true}}},\"label\":\"响应时间2\"}]}}],\"listeners\":{}}",
+      "uiStateJSON": "{\"vis\":{\"colors\":{\"响应时间1\":\"#FCE2DE\",\"响应时间2\":\"#BF1B00\"}}}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"rum-*\",\"query\":{\"query_string\":{\"query\":\"protocol:\\\"HTTP\\\"\",\"analyze_wildcard\":true}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "服务1在Server1",
+    "_type": "visualization",
+    "_source": {
+      "title": "服务1在Server1",
+      "visState": "{\"aggs\":[{\"id\":\"1\",\"params\":{\"customLabel\":\"server1\"},\"schema\":\"metric\",\"type\":\"count\"},{\"id\":\"2\",\"params\":{\"filters\":[{\"input\":{\"query\":{\"query_string\":{\"analyze_wildcard\":true,\"query\":\"http_state: HTTP_OK\"}}},\"label\":\"响应时间\"},{\"input\":{\"query\":{\"query_string\":{\"analyze_wildcard\":true,\"query\":\"http_state: HTTP_ERROR\"}}},\"label\":\"响应时间2\"}]},\"schema\":\"segment\",\"type\":\"filters\"}],\"listeners\":{},\"params\":{\"addLegend\":true,\"addTooltip\":true,\"isDonut\":true,\"shareYAxis\":true},\"title\":\"New Visualization\",\"type\":\"pie\"}",
+      "uiStateJSON": "{\"vis\":{\"colors\":{\"响应时间\":\"#E0F9D7\",\"响应时间2\":\"#508642\"}}}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"rum-*\",\"query\":{\"query_string\":{\"analyze_wildcard\":true,\"query\":\"protocol:\\\"HTTP\\\"\"}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "访问量",
+    "_type": "visualization",
+    "_source": {
+      "title": "访问量",
+      "visState": "{\"title\":\"New Visualization\",\"type\":\"line\",\"params\":{\"shareYAxis\":true,\"addTooltip\":true,\"addLegend\":true,\"showCircles\":true,\"smoothLines\":false,\"interpolate\":\"linear\",\"scale\":\"linear\",\"drawLinesBetweenPoints\":true,\"radiusRatio\":9,\"times\":[],\"addTimeMarker\":false,\"defaultYExtents\":false,\"setYExtents\":false,\"yAxis\":{}},\"aggs\":[{\"id\":\"1\",\"type\":\"count\",\"schema\":\"metric\",\"params\":{\"customLabel\":\"访问量\"}},{\"id\":\"2\",\"type\":\"date_histogram\",\"schema\":\"segment\",\"params\":{\"field\":\"@timestamp\",\"interval\":\"auto\",\"customInterval\":\"2h\",\"min_doc_count\":1,\"extended_bounds\":{},\"customLabel\":\"TimeStamp\"}}],\"listeners\":{}}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"rum-*\",\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "WebSphere",
+    "_type": "visualization",
+    "_source": {
+      "title": "WebSphere",
+      "visState": "{\"title\":\"OS\",\"type\":\"metric\",\"params\":{\"handleNoResults\":true,\"fontSize\":\"30\"},\"aggs\":[{\"id\":\"1\",\"type\":\"percentile_ranks\",\"schema\":\"metric\",\"params\":{\"field\":\"response_time\",\"values\":[400],\"customLabel\":\"Usage\"}},{\"id\":\"2\",\"type\":\"avg\",\"schema\":\"metric\",\"params\":{\"field\":\"tcp_c2s_bytes\",\"customLabel\":\"Bytes\"}}],\"listeners\":{}}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"rum-*\",\"query\":{\"query_string\":{\"analyze_wildcard\":true,\"query\":\"protocol:\\\"HTTP\\\"\"}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "TCP-MSS-ampersand-ampersand-RTT",
+    "_type": "visualization",
+    "_source": {
+      "title": "TCP MSS && RTT",
+      "visState": "{\"title\":\"New Visualization\",\"type\":\"metric\",\"params\":{\"handleNoResults\":true,\"fontSize\":\"30\"},\"aggs\":[{\"id\":\"1\",\"type\":\"avg\",\"schema\":\"metric\",\"params\":{\"field\":\"tcp_mss\",\"customLabel\":\"TCP MSS\"}},{\"id\":\"2\",\"type\":\"avg\",\"schema\":\"metric\",\"params\":{\"field\":\"tcp_rtt\",\"customLabel\":\"TCP RTT\"}}],\"listeners\":{}}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"rum-*\",\"query\":{\"query_string\":{\"analyze_wildcard\":true,\"query\":\"protocol:\\\"HTTP\\\"\"}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "OS",
+    "_type": "visualization",
+    "_source": {
+      "title": "OS",
+      "visState": "{\"title\":\"NIC\",\"type\":\"metric\",\"params\":{\"handleNoResults\":true,\"fontSize\":\"30\"},\"aggs\":[{\"id\":\"1\",\"type\":\"percentile_ranks\",\"schema\":\"metric\",\"params\":{\"field\":\"response_time\",\"values\":[400],\"customLabel\":\"Usage\"}},{\"id\":\"2\",\"type\":\"avg\",\"schema\":\"metric\",\"params\":{\"field\":\"tcp_c2s_bytes\",\"customLabel\":\"Bytes\"}}],\"listeners\":{}}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"rum-*\",\"query\":{\"query_string\":{\"analyze_wildcard\":true,\"query\":\"protocol:\\\"HTTP\\\"\"}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "NIC",
+    "_type": "visualization",
+    "_source": {
+      "title": "NIC",
+      "visState": "{\"title\":\"NIC\",\"type\":\"metric\",\"params\":{\"handleNoResults\":true,\"fontSize\":\"30\"},\"aggs\":[{\"id\":\"1\",\"type\":\"percentile_ranks\",\"schema\":\"metric\",\"params\":{\"field\":\"response_time\",\"values\":[400],\"customLabel\":\"Usage\"}},{\"id\":\"2\",\"type\":\"avg\",\"schema\":\"metric\",\"params\":{\"field\":\"tcp_c2s_bytes\",\"customLabel\":\"Bytes\"}}],\"listeners\":{}}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"rum-*\",\"query\":{\"query_string\":{\"analyze_wildcard\":true,\"query\":\"protocol:\\\"HTTP\\\"\"}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "CPU",
+    "_type": "visualization",
+    "_source": {
+      "title": "CPU",
+      "visState": "{\"title\":\"CPU\",\"type\":\"metric\",\"params\":{\"handleNoResults\":true,\"fontSize\":\"30\"},\"aggs\":[{\"id\":\"1\",\"type\":\"percentile_ranks\",\"schema\":\"metric\",\"params\":{\"field\":\"tcp_mss\",\"values\":[700],\"customLabel\":\"CPU Usage\"}},{\"id\":\"2\",\"type\":\"avg\",\"schema\":\"metric\",\"params\":{\"field\":\"tcp_rtt\",\"customLabel\":\"Run Queues\"}}],\"listeners\":{}}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"rum-*\",\"query\":{\"query_string\":{\"analyze_wildcard\":true,\"query\":\"protocol:\\\"HTTP\\\"\"}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "Memory",
+    "_type": "visualization",
+    "_source": {
+      "title": "Memory",
+      "visState": "{\"title\":\"Memory\",\"type\":\"metric\",\"params\":{\"handleNoResults\":true,\"fontSize\":\"30\"},\"aggs\":[{\"id\":\"1\",\"type\":\"percentile_ranks\",\"schema\":\"metric\",\"params\":{\"field\":\"tcp_mss\",\"values\":[788],\"customLabel\":\"Usage\"}},{\"id\":\"2\",\"type\":\"avg\",\"schema\":\"metric\",\"params\":{\"field\":\"tcp_rtt\",\"customLabel\":\"Free\"}}],\"listeners\":{}}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"rum-*\",\"query\":{\"query_string\":{\"analyze_wildcard\":true,\"query\":\"protocol:\\\"HTTP\\\"\"}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "Disk",
+    "_type": "visualization",
+    "_source": {
+      "title": "Disk",
+      "visState": "{\"title\":\"Disk\",\"type\":\"metric\",\"params\":{\"handleNoResults\":true,\"fontSize\":\"30\"},\"aggs\":[{\"id\":\"1\",\"type\":\"percentile_ranks\",\"schema\":\"metric\",\"params\":{\"field\":\"tcp_rtt\",\"values\":[70],\"customLabel\":\"Usage\"}},{\"id\":\"2\",\"type\":\"avg\",\"schema\":\"metric\",\"params\":{\"field\":\"tcp_rtt\",\"customLabel\":\"Free\"}}],\"listeners\":{}}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"rum-*\",\"query\":{\"query_string\":{\"analyze_wildcard\":true,\"query\":\"protocol:\\\"HTTP\\\"\"}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "访问量按服务分布",
+    "_type": "visualization",
+    "_source": {
+      "title": "访问量按服务分布",
+      "visState": "{\"title\":\"New Visualization\",\"type\":\"area\",\"params\":{\"shareYAxis\":true,\"addTooltip\":true,\"addLegend\":true,\"smoothLines\":false,\"scale\":\"linear\",\"interpolate\":\"linear\",\"mode\":\"stacked\",\"times\":[],\"addTimeMarker\":false,\"defaultYExtents\":false,\"setYExtents\":false,\"yAxis\":{}},\"aggs\":[{\"id\":\"1\",\"type\":\"count\",\"schema\":\"metric\",\"params\":{\"customLabel\":\"访问量\"}},{\"id\":\"2\",\"type\":\"date_histogram\",\"schema\":\"segment\",\"params\":{\"field\":\"@timestamp\",\"interval\":\"auto\",\"customInterval\":\"2h\",\"min_doc_count\":1,\"extended_bounds\":{},\"customLabel\":\"Timestamp\"}},{\"id\":\"3\",\"type\":\"filters\",\"schema\":\"group\",\"params\":{\"filters\":[{\"input\":{\"query\":{\"query_string\":{\"query\":\"service_ip: 10.20.30.40\",\"analyze_wildcard\":true}}},\"label\":\"服务1\"},{\"input\":{\"query\":{\"query_string\":{\"query\":\"service_ip: 192.168.1.12\",\"analyze_wildcard\":true}}},\"label\":\"服务2\"},{\"input\":{\"query\":{\"query_string\":{\"query\":\"service_ip: 20.30.41.156\",\"analyze_wildcard\":true}}},\"label\":\"服务3\"}]}}],\"listeners\":{}}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"rum-*\",\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "Server2所在子网(交换机)总包数",
+    "_type": "visualization",
+    "_source": {
+      "title": "Server2所在子网(交换机)总包数",
+      "visState": "{\"title\":\"New Visualization\",\"type\":\"area\",\"params\":{\"shareYAxis\":true,\"addTooltip\":true,\"addLegend\":true,\"smoothLines\":false,\"scale\":\"linear\",\"interpolate\":\"linear\",\"mode\":\"stacked\",\"times\":[],\"addTimeMarker\":false,\"defaultYExtents\":false,\"setYExtents\":false,\"yAxis\":{}},\"aggs\":[{\"id\":\"1\",\"type\":\"sum\",\"schema\":\"metric\",\"params\":{\"field\":\"tcp_total_packets\",\"customLabel\":\"总包数\"}},{\"id\":\"2\",\"type\":\"date_histogram\",\"schema\":\"segment\",\"params\":{\"field\":\"@timestamp\",\"interval\":\"auto\",\"customInterval\":\"2h\",\"min_doc_count\":1,\"extended_bounds\":{}}}],\"listeners\":{}}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"rum-*\",\"query\":{\"query_string\":{\"analyze_wildcard\":true,\"query\":\"protocol:\\\"HTTP\\\"\"}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "进-slash-出向总字节数统计",
+    "_type": "visualization",
+    "_source": {
+      "title": "进/出向总字节数统计",
+      "visState": "{\"title\":\"New Visualization\",\"type\":\"area\",\"params\":{\"shareYAxis\":true,\"addTooltip\":true,\"addLegend\":true,\"smoothLines\":true,\"scale\":\"linear\",\"interpolate\":\"linear\",\"mode\":\"stacked\",\"times\":[],\"addTimeMarker\":false,\"defaultYExtents\":false,\"setYExtents\":false,\"yAxis\":{}},\"aggs\":[{\"id\":\"3\",\"type\":\"sum\",\"schema\":\"metric\",\"params\":{\"field\":\"tcp_c2s_bytes\",\"customLabel\":\"In\"}},{\"id\":\"4\",\"type\":\"sum\",\"schema\":\"metric\",\"params\":{\"field\":\"tcp_s2c_bytes\",\"customLabel\":\"Out\"}},{\"id\":\"2\",\"type\":\"date_histogram\",\"schema\":\"segment\",\"params\":{\"field\":\"@timestamp\",\"interval\":\"auto\",\"customInterval\":\"2h\",\"min_doc_count\":1,\"extended_bounds\":{}}}],\"listeners\":{}}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"rum-*\",\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "总字节数",
+    "_type": "visualization",
+    "_source": {
+      "title": "总字节数",
+      "visState": "{\"title\":\"New Visualization\",\"type\":\"area\",\"params\":{\"shareYAxis\":true,\"addTooltip\":true,\"addLegend\":true,\"smoothLines\":true,\"scale\":\"linear\",\"interpolate\":\"linear\",\"mode\":\"stacked\",\"times\":[],\"addTimeMarker\":false,\"defaultYExtents\":false,\"setYExtents\":false,\"yAxis\":{}},\"aggs\":[{\"id\":\"1\",\"type\":\"sum\",\"schema\":\"metric\",\"params\":{\"field\":\"tcp_total_bytes\",\"customLabel\":\"总字节数\"}},{\"id\":\"2\",\"type\":\"date_histogram\",\"schema\":\"segment\",\"params\":{\"field\":\"@timestamp\",\"interval\":\"auto\",\"customInterval\":\"2h\",\"min_doc_count\":1,\"extended_bounds\":{}}}],\"listeners\":{}}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"rum-*\",\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "流量",
+    "_type": "visualization",
+    "_source": {
+      "title": "流量",
+      "visState": "{\"title\":\"流量\",\"type\":\"line\",\"params\":{\"shareYAxis\":true,\"addTooltip\":true,\"addLegend\":true,\"showCircles\":true,\"smoothLines\":false,\"interpolate\":\"linear\",\"scale\":\"linear\",\"drawLinesBetweenPoints\":true,\"radiusRatio\":9,\"times\":[],\"addTimeMarker\":false,\"defaultYExtents\":false,\"setYExtents\":false,\"yAxis\":{}},\"aggs\":[{\"id\":\"1\",\"type\":\"count\",\"schema\":\"metric\",\"params\":{\"customLabel\":\"流量\"}},{\"id\":\"2\",\"type\":\"date_histogram\",\"schema\":\"segment\",\"params\":{\"field\":\"@timestamp\",\"interval\":\"auto\",\"customInterval\":\"2h\",\"min_doc_count\":1,\"extended_bounds\":{},\"customLabel\":\"TimeStamp\"}}],\"listeners\":{}}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"rum-*\",\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "各Server字节数统计",
+    "_type": "visualization",
+    "_source": {
+      "title": "各Server字节数统计",
+      "visState": "{\"title\":\"各Server包数统计\",\"type\":\"pie\",\"params\":{\"shareYAxis\":true,\"addTooltip\":true,\"addLegend\":true,\"isDonut\":true},\"aggs\":[{\"id\":\"1\",\"type\":\"sum\",\"schema\":\"metric\",\"params\":{\"field\":\"tcp_total_bytes\",\"customLabel\":\"各Server总字节数分布\"}},{\"id\":\"2\",\"type\":\"filters\",\"schema\":\"segment\",\"params\":{\"filters\":[{\"input\":{\"query\":{\"query_string\":{\"query\":\"service_ip.raw: 20.30.41.56\",\"analyze_wildcard\":true}}},\"label\":\"Server1\"},{\"input\":{\"query\":{\"query_string\":{\"query\":\"service_ip.raw: 192.168.1.12\",\"analyze_wildcard\":true}}},\"label\":\"Server2\"},{\"input\":{\"query\":{\"query_string\":{\"query\":\"service_ip.raw: 10.20.30.40\",\"analyze_wildcard\":true}}},\"label\":\"Server3\"}]}}],\"listeners\":{}}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"rum-*\",\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "各Server包数统计",
+    "_type": "visualization",
+    "_source": {
+      "title": "各Server包数统计",
+      "visState": "{\"title\":\"New Visualization\",\"type\":\"pie\",\"params\":{\"shareYAxis\":true,\"addTooltip\":true,\"addLegend\":true,\"isDonut\":true},\"aggs\":[{\"id\":\"1\",\"type\":\"sum\",\"schema\":\"metric\",\"params\":{\"field\":\"tcp_total_packets\",\"customLabel\":\"各Server总包数分布\"}},{\"id\":\"2\",\"type\":\"filters\",\"schema\":\"segment\",\"params\":{\"filters\":[{\"input\":{\"query\":{\"query_string\":{\"query\":\"service_ip.raw: 20.30.41.56\",\"analyze_wildcard\":true}}},\"label\":\"Server1\"},{\"input\":{\"query\":{\"query_string\":{\"query\":\"service_ip.raw: 192.168.1.12\",\"analyze_wildcard\":true}}},\"label\":\"Server2\"},{\"input\":{\"query\":{\"query_string\":{\"query\":\"service_ip.raw: 10.20.30.40\",\"analyze_wildcard\":true}}},\"label\":\"Server3\"}]}}],\"listeners\":{}}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"rum-*\",\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "Server2所在子网X包重传",
+    "_type": "visualization",
+    "_source": {
+      "title": "Server2所在子网X包重传",
+      "visState": "{\"title\":\"Server2所在子网包重传\",\"type\":\"line\",\"params\":{\"addLegend\":true,\"addTimeMarker\":false,\"addTooltip\":true,\"defaultYExtents\":false,\"drawLinesBetweenPoints\":true,\"interpolate\":\"linear\",\"radiusRatio\":9,\"scale\":\"linear\",\"setYExtents\":false,\"shareYAxis\":true,\"showCircles\":true,\"smoothLines\":false,\"times\":[],\"yAxis\":{}},\"aggs\":[{\"id\":\"1\",\"type\":\"avg\",\"schema\":\"metric\",\"params\":{\"field\":\"tcp_retransmitted_packets\",\"customLabel\":\"重传包数\"}},{\"id\":\"2\",\"type\":\"date_histogram\",\"schema\":\"segment\",\"params\":{\"field\":\"@timestamp\",\"interval\":\"auto\",\"customInterval\":\"2h\",\"min_doc_count\":1,\"extended_bounds\":{},\"customLabel\":\"时间戳\"}},{\"id\":\"3\",\"type\":\"avg\",\"schema\":\"metric\",\"params\":{\"field\":\"包重传警戒值\",\"customLabel\":\"包重传警戒值\"}}],\"listeners\":{}}",
+      "uiStateJSON": "{\"vis\":{\"colors\":{\"包重传警戒值\":\"#BF1B00\"},\"legendOpen\":true}}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"rum-*\",\"query\":{\"query_string\":{\"analyze_wildcard\":true,\"query\":\"protocol:\\\"HTTP\\\"\"}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "RTT在各Server分布",
+    "_type": "visualization",
+    "_source": {
+      "title": "RTT在各Server分布",
+      "visState": "{\"title\":\"New Visualization\",\"type\":\"histogram\",\"params\":{\"shareYAxis\":true,\"addTooltip\":true,\"addLegend\":true,\"scale\":\"linear\",\"mode\":\"stacked\",\"times\":[],\"addTimeMarker\":false,\"defaultYExtents\":false,\"setYExtents\":false,\"yAxis\":{}},\"aggs\":[{\"id\":\"1\",\"type\":\"avg\",\"schema\":\"metric\",\"params\":{\"field\":\"tcp_rtt\",\"customLabel\":\"RTT在各Server分布\"}},{\"id\":\"2\",\"type\":\"date_histogram\",\"schema\":\"segment\",\"params\":{\"field\":\"@timestamp\",\"interval\":\"auto\",\"customInterval\":\"2h\",\"min_doc_count\":1,\"extended_bounds\":{}}},{\"id\":\"3\",\"type\":\"filters\",\"schema\":\"group\",\"params\":{\"filters\":[{\"input\":{\"query\":{\"query_string\":{\"query\":\"service_ip.raw: 192.168.1.12\",\"analyze_wildcard\":true}}},\"label\":\"Server1\"},{\"input\":{\"query\":{\"query_string\":{\"query\":\"service_ip.raw: 10.20.30.40\",\"analyze_wildcard\":true}}},\"label\":\"Server2\"},{\"input\":{\"query\":{\"query_string\":{\"query\":\"service_ip.raw: 20.30.41.56\",\"analyze_wildcard\":true}}},\"label\":\"Server3\"}]}}],\"listeners\":{}}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"rum-*\",\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "包重传",
+    "_type": "visualization",
+    "_source": {
+      "title": "包重传",
+      "visState": "{\"title\":\"总字节数\",\"type\":\"area\",\"params\":{\"shareYAxis\":true,\"addTooltip\":true,\"addLegend\":true,\"smoothLines\":true,\"scale\":\"linear\",\"interpolate\":\"linear\",\"mode\":\"stacked\",\"times\":[],\"addTimeMarker\":false,\"defaultYExtents\":false,\"setYExtents\":false,\"yAxis\":{}},\"aggs\":[{\"id\":\"1\",\"type\":\"sum\",\"schema\":\"metric\",\"params\":{\"field\":\"tcp_retransmitted_packets\",\"customLabel\":\"包重传统计\"}},{\"id\":\"2\",\"type\":\"date_histogram\",\"schema\":\"segment\",\"params\":{\"field\":\"@timestamp\",\"interval\":\"auto\",\"customInterval\":\"2h\",\"min_doc_count\":1,\"extended_bounds\":{}}}],\"listeners\":{}}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"rum-*\",\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "包乱序统计",
+    "_type": "visualization",
+    "_source": {
+      "title": "包乱序统计",
+      "visState": "{\"title\":\"包重传\",\"type\":\"area\",\"params\":{\"shareYAxis\":true,\"addTooltip\":true,\"addLegend\":true,\"smoothLines\":true,\"scale\":\"linear\",\"interpolate\":\"linear\",\"mode\":\"stacked\",\"times\":[],\"addTimeMarker\":false,\"defaultYExtents\":false,\"setYExtents\":false,\"yAxis\":{}},\"aggs\":[{\"id\":\"1\",\"type\":\"sum\",\"schema\":\"metric\",\"params\":{\"field\":\"tcp_out_of_order_packets\",\"customLabel\":\"包乱序统计\"}},{\"id\":\"2\",\"type\":\"date_histogram\",\"schema\":\"segment\",\"params\":{\"field\":\"@timestamp\",\"interval\":\"auto\",\"customInterval\":\"2h\",\"min_doc_count\":1,\"extended_bounds\":{}}}],\"listeners\":{}}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"rum-*\",\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "总包数",
+    "_type": "visualization",
+    "_source": {
+      "title": "总包数",
+      "visState": "{\"title\":\"总字节数\",\"type\":\"area\",\"params\":{\"shareYAxis\":true,\"addTooltip\":true,\"addLegend\":true,\"smoothLines\":true,\"scale\":\"linear\",\"interpolate\":\"linear\",\"mode\":\"stacked\",\"times\":[],\"addTimeMarker\":false,\"defaultYExtents\":false,\"setYExtents\":false,\"yAxis\":{}},\"aggs\":[{\"id\":\"1\",\"type\":\"sum\",\"schema\":\"metric\",\"params\":{\"field\":\"tcp_total_packets\",\"customLabel\":\"总包数\"}},{\"id\":\"2\",\"type\":\"date_histogram\",\"schema\":\"segment\",\"params\":{\"field\":\"@timestamp\",\"interval\":\"auto\",\"customInterval\":\"2h\",\"min_doc_count\":1,\"extended_bounds\":{}}}],\"listeners\":{}}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"rum-*\",\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "各Server包重传分布",
+    "_type": "visualization",
+    "_source": {
+      "title": "各Server包重传分布",
+      "visState": "{\"title\":\"各Server包数统计\",\"type\":\"pie\",\"params\":{\"shareYAxis\":true,\"addTooltip\":true,\"addLegend\":true,\"isDonut\":true},\"aggs\":[{\"id\":\"1\",\"type\":\"sum\",\"schema\":\"metric\",\"params\":{\"field\":\"tcp_retransmitted_packets\",\"customLabel\":\"各Server包重传分布\"}},{\"id\":\"2\",\"type\":\"filters\",\"schema\":\"segment\",\"params\":{\"filters\":[{\"input\":{\"query\":{\"query_string\":{\"query\":\"service_ip.raw: 20.30.41.56\",\"analyze_wildcard\":true}}},\"label\":\"Server1\"},{\"input\":{\"query\":{\"query_string\":{\"query\":\"service_ip.raw: 192.168.1.12\",\"analyze_wildcard\":true}}},\"label\":\"Server2\"},{\"input\":{\"query\":{\"query_string\":{\"query\":\"service_ip.raw: 10.20.30.40\",\"analyze_wildcard\":true}}},\"label\":\"Server3\"}]}}],\"listeners\":{}}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"rum-*\",\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "各Server包乱序分布",
+    "_type": "visualization",
+    "_source": {
+      "title": "各Server包乱序分布",
+      "visState": "{\"title\":\"各Server包数统计\",\"type\":\"pie\",\"params\":{\"shareYAxis\":true,\"addTooltip\":true,\"addLegend\":true,\"isDonut\":true},\"aggs\":[{\"id\":\"1\",\"type\":\"sum\",\"schema\":\"metric\",\"params\":{\"field\":\"tcp_out_of_order_packets\",\"customLabel\":\"各Server包乱序分布\"}},{\"id\":\"2\",\"type\":\"filters\",\"schema\":\"segment\",\"params\":{\"filters\":[{\"input\":{\"query\":{\"query_string\":{\"query\":\"service_ip.raw: 20.30.41.56\",\"analyze_wildcard\":true}}},\"label\":\"Server1\"},{\"input\":{\"query\":{\"query_string\":{\"query\":\"service_ip.raw: 192.168.1.12\",\"analyze_wildcard\":true}}},\"label\":\"Server2\"},{\"input\":{\"query\":{\"query_string\":{\"query\":\"service_ip.raw: 10.20.30.40\",\"analyze_wildcard\":true}}},\"label\":\"Server3\"}]}}],\"listeners\":{}}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"rum-*\",\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "Server1总流量",
+    "_type": "visualization",
+    "_source": {
+      "title": "Server1总流量",
+      "visState": "{\"title\":\"Server1总字节数\",\"type\":\"area\",\"params\":{\"shareYAxis\":true,\"addTooltip\":true,\"addLegend\":true,\"smoothLines\":true,\"scale\":\"linear\",\"interpolate\":\"linear\",\"mode\":\"stacked\",\"times\":[],\"addTimeMarker\":false,\"defaultYExtents\":false,\"setYExtents\":false,\"yAxis\":{}},\"aggs\":[{\"id\":\"1\",\"type\":\"sum\",\"schema\":\"metric\",\"params\":{\"field\":\"tcp_total_bytes\",\"customLabel\":\"总字节数\"}},{\"id\":\"2\",\"type\":\"date_histogram\",\"schema\":\"segment\",\"params\":{\"field\":\"@timestamp\",\"interval\":\"auto\",\"customInterval\":\"2h\",\"min_doc_count\":1,\"extended_bounds\":{}}}],\"listeners\":{}}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"rum-*\",\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "Server1总字节数",
+    "_type": "visualization",
+    "_source": {
+      "title": "Server1总字节数",
+      "visState": "{\"title\":\"总字节数\",\"type\":\"area\",\"params\":{\"shareYAxis\":true,\"addTooltip\":true,\"addLegend\":true,\"smoothLines\":true,\"scale\":\"linear\",\"interpolate\":\"linear\",\"mode\":\"stacked\",\"times\":[],\"addTimeMarker\":false,\"defaultYExtents\":false,\"setYExtents\":false,\"yAxis\":{}},\"aggs\":[{\"id\":\"1\",\"type\":\"sum\",\"schema\":\"metric\",\"params\":{\"field\":\"tcp_total_bytes\",\"customLabel\":\"总字节数\"}},{\"id\":\"2\",\"type\":\"date_histogram\",\"schema\":\"segment\",\"params\":{\"field\":\"@timestamp\",\"interval\":\"auto\",\"customInterval\":\"2h\",\"min_doc_count\":1,\"extended_bounds\":{}}}],\"listeners\":{}}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"rum-*\",\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "总流量",
+    "_type": "visualization",
+    "_source": {
+      "title": "总流量",
+      "visState": "{\"title\":\"总字节数\",\"type\":\"area\",\"params\":{\"shareYAxis\":true,\"addTooltip\":true,\"addLegend\":true,\"smoothLines\":true,\"scale\":\"linear\",\"interpolate\":\"linear\",\"mode\":\"stacked\",\"times\":[],\"addTimeMarker\":false,\"defaultYExtents\":false,\"setYExtents\":false,\"yAxis\":{}},\"aggs\":[{\"id\":\"1\",\"type\":\"sum\",\"schema\":\"metric\",\"params\":{\"field\":\"tcp_total_bytes\",\"customLabel\":\"总字节数\"}},{\"id\":\"2\",\"type\":\"date_histogram\",\"schema\":\"segment\",\"params\":{\"field\":\"@timestamp\",\"interval\":\"auto\",\"customInterval\":\"2h\",\"min_doc_count\":1,\"extended_bounds\":{}}}],\"listeners\":{}}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"rum-*\",\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "流量按服务分布",
+    "_type": "visualization",
+    "_source": {
+      "title": "流量按服务分布",
+      "visState": "{\"title\":\"各Server流量分布\",\"type\":\"pie\",\"params\":{\"shareYAxis\":true,\"addTooltip\":true,\"addLegend\":true,\"isDonut\":true},\"aggs\":[{\"id\":\"1\",\"type\":\"sum\",\"schema\":\"metric\",\"params\":{\"field\":\"tcp_total_bytes\",\"customLabel\":\"各Server总字节数分布\"}},{\"id\":\"2\",\"type\":\"filters\",\"schema\":\"segment\",\"params\":{\"filters\":[{\"input\":{\"query\":{\"query_string\":{\"query\":\"service_ip.raw: 20.30.41.56\",\"analyze_wildcard\":true}}},\"label\":\"Server1\"},{\"input\":{\"query\":{\"query_string\":{\"query\":\"service_ip.raw: 192.168.1.12\",\"analyze_wildcard\":true}}},\"label\":\"Server2\"},{\"input\":{\"query\":{\"query_string\":{\"query\":\"service_ip.raw: 10.20.30.40\",\"analyze_wildcard\":true}}},\"label\":\"Server3\"}]}}],\"listeners\":{}}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"rum-*\",\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "各Server流量分布",
+    "_type": "visualization",
+    "_source": {
+      "title": "各Server流量分布",
+      "visState": "{\"title\":\"各Server字节数统计\",\"type\":\"pie\",\"params\":{\"shareYAxis\":true,\"addTooltip\":true,\"addLegend\":true,\"isDonut\":true},\"aggs\":[{\"id\":\"1\",\"type\":\"sum\",\"schema\":\"metric\",\"params\":{\"field\":\"tcp_total_bytes\",\"customLabel\":\"各Server总字节数分布\"}},{\"id\":\"2\",\"type\":\"filters\",\"schema\":\"segment\",\"params\":{\"filters\":[{\"input\":{\"query\":{\"query_string\":{\"query\":\"service_ip.raw: 20.30.41.56\",\"analyze_wildcard\":true}}},\"label\":\"Server1\"},{\"input\":{\"query\":{\"query_string\":{\"query\":\"service_ip.raw: 192.168.1.12\",\"analyze_wildcard\":true}}},\"label\":\"Server2\"},{\"input\":{\"query\":{\"query_string\":{\"query\":\"service_ip.raw: 10.20.30.40\",\"analyze_wildcard\":true}}},\"label\":\"Server3\"}]}}],\"listeners\":{}}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"rum-*\",\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "包数按服务分布",
+    "_type": "visualization",
+    "_source": {
+      "title": "包数按服务分布",
+      "visState": "{\"title\":\"各Server包数统计\",\"type\":\"pie\",\"params\":{\"shareYAxis\":true,\"addTooltip\":true,\"addLegend\":true,\"isDonut\":true},\"aggs\":[{\"id\":\"1\",\"type\":\"sum\",\"schema\":\"metric\",\"params\":{\"field\":\"tcp_total_packets\",\"customLabel\":\"各Server总包数分布\"}},{\"id\":\"2\",\"type\":\"filters\",\"schema\":\"segment\",\"params\":{\"filters\":[{\"input\":{\"query\":{\"query_string\":{\"query\":\"service_ip.raw: 20.30.41.56\",\"analyze_wildcard\":true}}},\"label\":\"Server1\"},{\"input\":{\"query\":{\"query_string\":{\"query\":\"service_ip.raw: 192.168.1.12\",\"analyze_wildcard\":true}}},\"label\":\"Server2\"},{\"input\":{\"query\":{\"query_string\":{\"query\":\"service_ip.raw: 10.20.30.40\",\"analyze_wildcard\":true}}},\"label\":\"Server3\"}]}}],\"listeners\":{}}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"rum-*\",\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "包重传按服务分布",
+    "_type": "visualization",
+    "_source": {
+      "title": "包重传按服务分布",
+      "visState": "{\"title\":\"各Server包重传分布\",\"type\":\"pie\",\"params\":{\"shareYAxis\":true,\"addTooltip\":true,\"addLegend\":true,\"isDonut\":true},\"aggs\":[{\"id\":\"1\",\"type\":\"sum\",\"schema\":\"metric\",\"params\":{\"field\":\"tcp_retransmitted_packets\",\"customLabel\":\"各Server包重传分布\"}},{\"id\":\"2\",\"type\":\"filters\",\"schema\":\"segment\",\"params\":{\"filters\":[{\"input\":{\"query\":{\"query_string\":{\"query\":\"service_ip.raw: 20.30.41.56\",\"analyze_wildcard\":true}}},\"label\":\"Server1\"},{\"input\":{\"query\":{\"query_string\":{\"query\":\"service_ip.raw: 192.168.1.12\",\"analyze_wildcard\":true}}},\"label\":\"Server2\"},{\"input\":{\"query\":{\"query_string\":{\"query\":\"service_ip.raw: 10.20.30.40\",\"analyze_wildcard\":true}}},\"label\":\"Server3\"}]}}],\"listeners\":{}}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"rum-*\",\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "平均每次连接重复的syncack",
+    "_type": "visualization",
+    "_source": {
+      "title": "平均每次连接重复的syncack",
+      "visState": "{\"title\":\"重复的syncack\",\"type\":\"area\",\"params\":{\"shareYAxis\":true,\"addTooltip\":true,\"addLegend\":true,\"smoothLines\":false,\"scale\":\"linear\",\"interpolate\":\"linear\",\"mode\":\"stacked\",\"times\":[],\"addTimeMarker\":false,\"defaultYExtents\":false,\"setYExtents\":false,\"yAxis\":{}},\"aggs\":[{\"id\":\"1\",\"type\":\"avg\",\"schema\":\"metric\",\"params\":{\"field\":\"tcp_duplicate_synacks\",\"customLabel\":\"重复的synack\"}},{\"id\":\"2\",\"type\":\"date_histogram\",\"schema\":\"segment\",\"params\":{\"field\":\"@timestamp\",\"interval\":\"auto\",\"customInterval\":\"2h\",\"min_doc_count\":1,\"extended_bounds\":{}}}],\"listeners\":{}}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"rum-*\",\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "重复的syncack",
+    "_type": "visualization",
+    "_source": {
+      "title": "重复的syncack",
+      "visState": "{\"title\":\"重复的syncack\",\"type\":\"area\",\"params\":{\"shareYAxis\":true,\"addTooltip\":true,\"addLegend\":true,\"smoothLines\":false,\"scale\":\"linear\",\"interpolate\":\"linear\",\"mode\":\"stacked\",\"times\":[],\"addTimeMarker\":false,\"defaultYExtents\":false,\"setYExtents\":false,\"yAxis\":{}},\"aggs\":[{\"id\":\"1\",\"type\":\"avg\",\"schema\":\"metric\",\"params\":{\"field\":\"tcp_duplicate_synacks\",\"customLabel\":\"重复的synack\"}},{\"id\":\"2\",\"type\":\"date_histogram\",\"schema\":\"segment\",\"params\":{\"field\":\"@timestamp\",\"interval\":\"auto\",\"customInterval\":\"2h\",\"min_doc_count\":1,\"extended_bounds\":{}}}],\"listeners\":{}}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"rum-*\",\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "重复的ack",
+    "_type": "visualization",
+    "_source": {
+      "title": "重复的ack",
+      "visState": "{\"title\":\"New Visualization\",\"type\":\"area\",\"params\":{\"shareYAxis\":true,\"addTooltip\":true,\"addLegend\":true,\"smoothLines\":false,\"scale\":\"linear\",\"interpolate\":\"linear\",\"mode\":\"stacked\",\"times\":[],\"addTimeMarker\":false,\"defaultYExtents\":false,\"setYExtents\":false,\"yAxis\":{}},\"aggs\":[{\"id\":\"1\",\"type\":\"sum\",\"schema\":\"metric\",\"params\":{\"field\":\"tcp_duplicate_acks\",\"customLabel\":\"重复的ack\"}},{\"id\":\"2\",\"type\":\"date_histogram\",\"schema\":\"segment\",\"params\":{\"field\":\"@timestamp\",\"interval\":\"auto\",\"customInterval\":\"2h\",\"min_doc_count\":1,\"extended_bounds\":{}}}],\"listeners\":{}}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"rum-*\",\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "零窗口",
+    "_type": "visualization",
+    "_source": {
+      "title": "零窗口",
+      "visState": "{\"title\":\"New Visualization\",\"type\":\"area\",\"params\":{\"shareYAxis\":true,\"addTooltip\":true,\"addLegend\":true,\"smoothLines\":false,\"scale\":\"linear\",\"interpolate\":\"linear\",\"mode\":\"stacked\",\"times\":[],\"addTimeMarker\":false,\"defaultYExtents\":false,\"setYExtents\":false,\"yAxis\":{}},\"aggs\":[{\"id\":\"1\",\"type\":\"sum\",\"schema\":\"metric\",\"params\":{\"field\":\"tcp_zero_windows\",\"customLabel\":\"零窗口\"}},{\"id\":\"2\",\"type\":\"date_histogram\",\"schema\":\"segment\",\"params\":{\"field\":\"@timestamp\",\"interval\":\"auto\",\"customInterval\":\"2h\",\"min_doc_count\":1,\"extended_bounds\":{}}}],\"listeners\":{}}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"rum-*\",\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "OUT流量按服务分布",
+    "_type": "visualization",
+    "_source": {
+      "title": "OUT流量按服务分布",
+      "visState": "{\"title\":\"In流量按服务分布\",\"type\":\"pie\",\"params\":{\"shareYAxis\":true,\"addTooltip\":true,\"addLegend\":true,\"isDonut\":true},\"aggs\":[{\"id\":\"1\",\"type\":\"sum\",\"schema\":\"metric\",\"params\":{\"field\":\"tcp_c2s_bytes\",\"customLabel\":\"In字节数按服务分布\"}},{\"id\":\"2\",\"type\":\"filters\",\"schema\":\"segment\",\"params\":{\"filters\":[{\"input\":{\"query\":{\"query_string\":{\"query\":\"service_ip.raw: 20.30.41.56\",\"analyze_wildcard\":true}}},\"label\":\"Server1\"},{\"input\":{\"query\":{\"query_string\":{\"query\":\"service_ip.raw: 192.168.1.12\",\"analyze_wildcard\":true}}},\"label\":\"Server2\"},{\"input\":{\"query\":{\"query_string\":{\"query\":\"service_ip.raw: 10.20.30.40\",\"analyze_wildcard\":true}}},\"label\":\"Server3\"}]}}],\"listeners\":{}}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"rum-*\",\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "In流量按服务分布",
+    "_type": "visualization",
+    "_source": {
+      "title": "In流量按服务分布",
+      "visState": "{\"title\":\"流量按服务分布\",\"type\":\"pie\",\"params\":{\"shareYAxis\":true,\"addTooltip\":true,\"addLegend\":true,\"isDonut\":true},\"aggs\":[{\"id\":\"1\",\"type\":\"sum\",\"schema\":\"metric\",\"params\":{\"field\":\"tcp_c2s_bytes\",\"customLabel\":\"In字节数按服务分布\"}},{\"id\":\"2\",\"type\":\"filters\",\"schema\":\"segment\",\"params\":{\"filters\":[{\"input\":{\"query\":{\"query_string\":{\"query\":\"service_ip.raw: 20.30.41.56\",\"analyze_wildcard\":true}}},\"label\":\"Server1\"},{\"input\":{\"query\":{\"query_string\":{\"query\":\"service_ip.raw: 192.168.1.12\",\"analyze_wildcard\":true}}},\"label\":\"Server2\"},{\"input\":{\"query\":{\"query_string\":{\"query\":\"service_ip.raw: 10.20.30.40\",\"analyze_wildcard\":true}}},\"label\":\"Server3\"}]}}],\"listeners\":{}}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"rum-*\",\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "包乱序按服务分布",
+    "_type": "visualization",
+    "_source": {
+      "title": "包乱序按服务分布",
+      "visState": "{\"title\":\"各Server包乱序分布\",\"type\":\"pie\",\"params\":{\"shareYAxis\":true,\"addTooltip\":true,\"addLegend\":true,\"isDonut\":true},\"aggs\":[{\"id\":\"1\",\"type\":\"sum\",\"schema\":\"metric\",\"params\":{\"field\":\"tcp_out_of_order_packets\",\"customLabel\":\"各Server包乱序分布\"}},{\"id\":\"2\",\"type\":\"filters\",\"schema\":\"segment\",\"params\":{\"filters\":[{\"input\":{\"query\":{\"query_string\":{\"query\":\"service_ip.raw: 20.30.41.56\",\"analyze_wildcard\":true}}},\"label\":\"Server1\"},{\"input\":{\"query\":{\"query_string\":{\"query\":\"service_ip.raw: 192.168.1.12\",\"analyze_wildcard\":true}}},\"label\":\"Server2\"},{\"input\":{\"query\":{\"query_string\":{\"query\":\"service_ip.raw: 10.20.30.40\",\"analyze_wildcard\":true}}},\"label\":\"Server3\"}]}}],\"listeners\":{}}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"rum-*\",\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "paws",
+    "_type": "visualization",
+    "_source": {
+      "title": "paws",
+      "visState": "{\"title\":\"零窗口\",\"type\":\"area\",\"params\":{\"shareYAxis\":true,\"addTooltip\":true,\"addLegend\":true,\"smoothLines\":false,\"scale\":\"linear\",\"interpolate\":\"linear\",\"mode\":\"stacked\",\"times\":[],\"addTimeMarker\":false,\"defaultYExtents\":false,\"setYExtents\":false,\"yAxis\":{}},\"aggs\":[{\"id\":\"1\",\"type\":\"sum\",\"schema\":\"metric\",\"params\":{\"field\":\"tcp_paws_packets\",\"customLabel\":\"paws\"}},{\"id\":\"2\",\"type\":\"date_histogram\",\"schema\":\"segment\",\"params\":{\"field\":\"@timestamp\",\"interval\":\"auto\",\"customInterval\":\"2h\",\"min_doc_count\":1,\"extended_bounds\":{}}}],\"listeners\":{}}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"rum-*\",\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "平均每次连接的重试次数",
+    "_type": "visualization",
+    "_source": {
+      "title": "平均每次连接的重试次数",
+      "visState": "{\"title\":\"平均每次连接重复的syncack\",\"type\":\"area\",\"params\":{\"shareYAxis\":true,\"addTooltip\":true,\"addLegend\":true,\"smoothLines\":false,\"scale\":\"linear\",\"interpolate\":\"linear\",\"mode\":\"stacked\",\"times\":[],\"addTimeMarker\":false,\"defaultYExtents\":false,\"setYExtents\":false,\"yAxis\":{}},\"aggs\":[{\"id\":\"1\",\"type\":\"avg\",\"schema\":\"metric\",\"params\":{\"field\":\"tcp_duplicate_synacks\",\"customLabel\":\"重复的synack\"}},{\"id\":\"2\",\"type\":\"date_histogram\",\"schema\":\"segment\",\"params\":{\"field\":\"@timestamp\",\"interval\":\"auto\",\"customInterval\":\"2h\",\"min_doc_count\":1,\"extended_bounds\":{}}}],\"listeners\":{}}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"rum-*\",\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "平均每次连接的重试时间",
+    "_type": "visualization",
+    "_source": {
+      "title": "平均每次连接的重试时间",
+      "visState": "{\"title\":\"包重传\",\"type\":\"area\",\"params\":{\"shareYAxis\":true,\"addTooltip\":true,\"addLegend\":true,\"smoothLines\":true,\"scale\":\"linear\",\"interpolate\":\"linear\",\"mode\":\"stacked\",\"times\":[],\"addTimeMarker\":false,\"defaultYExtents\":false,\"setYExtents\":false,\"yAxis\":{}},\"aggs\":[{\"id\":\"1\",\"type\":\"avg\",\"schema\":\"metric\",\"params\":{\"field\":\"tcp_retries_latency\",\"customLabel\":\"平均重试时间\"}},{\"id\":\"2\",\"type\":\"date_histogram\",\"schema\":\"segment\",\"params\":{\"field\":\"@timestamp\",\"interval\":\"auto\",\"customInterval\":\"2h\",\"min_doc_count\":1,\"extended_bounds\":{}}}],\"listeners\":{}}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"rum-*\",\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "平均每次连接的连接时间",
+    "_type": "visualization",
+    "_source": {
+      "title": "平均每次连接的连接时间",
+      "visState": "{\"title\":\"平均每次连接的重试时间\",\"type\":\"area\",\"params\":{\"shareYAxis\":true,\"addTooltip\":true,\"addLegend\":true,\"smoothLines\":true,\"scale\":\"linear\",\"interpolate\":\"linear\",\"mode\":\"stacked\",\"times\":[],\"addTimeMarker\":false,\"defaultYExtents\":false,\"setYExtents\":false,\"yAxis\":{}},\"aggs\":[{\"id\":\"1\",\"type\":\"avg\",\"schema\":\"metric\",\"params\":{\"field\":\"tcp_connection_latency\",\"customLabel\":\"平均连接时间\"}},{\"id\":\"2\",\"type\":\"date_histogram\",\"schema\":\"segment\",\"params\":{\"field\":\"@timestamp\",\"interval\":\"auto\",\"customInterval\":\"2h\",\"min_doc_count\":1,\"extended_bounds\":{}}}],\"listeners\":{}}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"rum-*\",\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "平均RTT",
+    "_type": "visualization",
+    "_source": {
+      "title": "平均RTT",
+      "visState": "{\"title\":\"平均每次连接的连接时间\",\"type\":\"area\",\"params\":{\"shareYAxis\":true,\"addTooltip\":true,\"addLegend\":true,\"smoothLines\":true,\"scale\":\"linear\",\"interpolate\":\"linear\",\"mode\":\"stacked\",\"times\":[],\"addTimeMarker\":false,\"defaultYExtents\":false,\"setYExtents\":false,\"yAxis\":{}},\"aggs\":[{\"id\":\"1\",\"type\":\"avg\",\"schema\":\"metric\",\"params\":{\"field\":\"tcp_rtt\",\"customLabel\":\"平均RTT\"}},{\"id\":\"2\",\"type\":\"date_histogram\",\"schema\":\"segment\",\"params\":{\"field\":\"@timestamp\",\"interval\":\"auto\",\"customInterval\":\"2h\",\"min_doc_count\":1,\"extended_bounds\":{}}}],\"listeners\":{}}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"rum-*\",\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}},\"filter\":[]}"
+      }
+    }
+  }
+]
