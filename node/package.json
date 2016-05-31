@@ -1,0 +1,26 @@
+{
+  "name": "rum-demo",
+  "version": "1.0.0",
+  "description": "curl -XPUT localhost:9200/_template/rum -d @apm_rum_template.json",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tianchao-haohan/rum-demo.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tianchao-haohan/rum-demo/issues"
+  },
+  "homepage": "https://github.com/tianchao-haohan/rum-demo#readme",
+  "dependencies": {
+    "document": "^0.4.7",
+    "express": "^4.13.4",
+    "express-handlebars": "^3.0.0",
+    "frames": "0.0.1",
+    "jade": "^1.11.0"
+  }
+}
