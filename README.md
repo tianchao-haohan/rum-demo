@@ -5,3 +5,4 @@ es_config:
     To set this value permanently, update the vm.max_map_count setting in /etc/sysctl.conf.
 2. -Xms1g
 
+docker run --privileged -d --name elk -p 80:80 -p 9200:9200 -e ES_JAVA_OPTS="-Xms2g -Xmx2g" blacktop/elk:5.0-alpha
