@@ -2,12 +2,16 @@ var express = require('express');
 
 var hbs = require('express-handlebars').create({
   defaultLayout: 'main',
-  extname: '.hbs'});
+  extname: '.hbs',
+  layoutsDir: __dirname + '/views/layouts'});
 var app = express();
 
 app.set('port',process.env.PORT || 8080);
 app.engine('hbs',hbs.engine);
 app.set('view engine','hbs');
+//app.set('views', '/home/workspace/rum-demo/node/views');
+app.set('views', __dirname +  '/views');
+
 
 app.use(express.static(__dirname + '/public'));
 
