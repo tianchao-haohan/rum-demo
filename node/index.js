@@ -12,7 +12,6 @@ app.set('view engine','hbs');
 //app.set('views', '/home/workspace/rum-demo/node/views');
 app.set('views', __dirname +  '/views');
 
-
 app.use(express.static(__dirname + '/public'));
 
 app.get('/', function (req, res) {
