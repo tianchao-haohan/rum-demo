@@ -26,15 +26,27 @@ app.get('/about', function (req, res) {
   });
 });
 
-app.get('/serviceGroup', function (req, res) {
-  res.render('serviceGroup',{
-    title:'服务组性能健康状况'
+app.get('/transactionGroup', function (req, res) {
+  res.render('transactionGroup',{
+    title:'交易应用组性能健康状况'
   });
 });
 
-app.get('/serviceGroupDetails', function (req, res) {
-  res.render('serviceGroupDetails',{
-    title:'服务组各服务性能健康状况'
+app.get('/applicationOverview', function (req, res) {
+  res.render('applicationOverview',{
+    title:'应用在各Server健康状况'
+  });
+});
+
+app.get('/applicationDetails', function (req, res) {
+  res.render('applicationDetails',{
+    title:'应用在具体Server详情'
+  });
+});
+
+app.get('/serviceDetails', function (req, res) {
+  res.render('serviceDetails',{
+    title:'服务在服务器上详情'
   });
 });
 
